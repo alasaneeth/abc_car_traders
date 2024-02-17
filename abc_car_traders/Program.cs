@@ -16,7 +16,8 @@ namespace abc_car_traders
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new signUpForm());
+            // Application.Run(new signUpForm());
+            Application.Run(new CarForm());
         }
     }
 }
