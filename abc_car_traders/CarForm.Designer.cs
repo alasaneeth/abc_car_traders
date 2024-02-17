@@ -40,8 +40,8 @@
             this.modelBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.updateBtn = new System.Windows.Forms.Button();
+            this.deletBtn = new System.Windows.Forms.Button();
             this.loadDataTable = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadDataTable)).BeginInit();
@@ -184,27 +184,29 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // updateBtn
             // 
-            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.Black;
-            this.button2.Location = new System.Drawing.Point(398, 244);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(101, 34);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.updateBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updateBtn.ForeColor = System.Drawing.Color.Black;
+            this.updateBtn.Location = new System.Drawing.Point(398, 244);
+            this.updateBtn.Name = "updateBtn";
+            this.updateBtn.Size = new System.Drawing.Size(101, 34);
+            this.updateBtn.TabIndex = 1;
+            this.updateBtn.Text = "Update";
+            this.updateBtn.UseVisualStyleBackColor = true;
+            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
             // 
-            // button3
+            // deletBtn
             // 
-            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Location = new System.Drawing.Point(528, 244);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(92, 34);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Delete";
-            this.button3.UseVisualStyleBackColor = true;
+            this.deletBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deletBtn.ForeColor = System.Drawing.Color.Black;
+            this.deletBtn.Location = new System.Drawing.Point(528, 244);
+            this.deletBtn.Name = "deletBtn";
+            this.deletBtn.Size = new System.Drawing.Size(92, 34);
+            this.deletBtn.TabIndex = 1;
+            this.deletBtn.Text = "Delete";
+            this.deletBtn.UseVisualStyleBackColor = true;
+            this.deletBtn.Click += new System.EventHandler(this.deletBtn_Click);
             // 
             // loadDataTable
             // 
@@ -215,22 +217,24 @@
             this.loadDataTable.Location = new System.Drawing.Point(27, 295);
             this.loadDataTable.Name = "loadDataTable";
             this.loadDataTable.ReadOnly = true;
-            this.loadDataTable.Size = new System.Drawing.Size(593, 210);
+            this.loadDataTable.Size = new System.Drawing.Size(621, 210);
             this.loadDataTable.TabIndex = 2;
+            this.loadDataTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loadDataTable_CellContentClick);
             // 
             // CarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(650, 517);
+            this.ClientSize = new System.Drawing.Size(660, 517);
             this.Controls.Add(this.loadDataTable);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.deletBtn);
+            this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "CarForm";
             this.Text = "Car Form";
+            this.Load += new System.EventHandler(this.CarForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadDataTable)).EndInit();
@@ -252,8 +256,8 @@
         private System.Windows.Forms.ComboBox fuelBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button deletBtn;
         private System.Windows.Forms.DataGridView loadDataTable;
     }
 }

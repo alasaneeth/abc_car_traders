@@ -23,8 +23,37 @@ namespace abc_car_traders.AppClass
         public void save()
         {
             string sql = "INSERT INTO Cars (carModel,fuelType, year, Price, AvailableQuantity) VALUES  ( '" + model + "','" + fuelType + "'," + year + ", " + price + ", " + qty + ")";
-            executeQuery(sql, functionType.insert);
+            if (executeQuery(sql, functionType.insert)) 
+            {
+                view();
+            };
         }
+
+        public void view()
+        {
+            string sql = "select * from Cars;";
+            loadDataFromDatabaseInGridView(sql, myGridView);
+        }
+
+        public void Update()
+        {
+            string sql = "update Cars set carModel='" + model + "', fuelType='" + fuelType + "', year='" + year + "', Price='" + price + "', AvailableQuantity='" + qty + "' where carId = '" + Id + "'";
+            if (executeQuery(sql, functionType.update))
+            {
+                view();
+            }
+        }
+
+        public void delete()
+        {
+            string sql = "Delete from Cars where carId =" + Id;
+            if (executeQuery(sql, functionType.delete))
+            {
+                view();
+            }
+
+        }
+
 
     }
 }

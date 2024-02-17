@@ -48,5 +48,32 @@ namespace abc_car_traders
         {
             car.save();
         }
+
+        private void loadDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            car.Id = Convert.ToInt32(loadDataTable.Rows[rowIndex].Cells[0].Value.ToString());
+            modelBox.Text = loadDataTable.Rows[rowIndex].Cells[1].Value.ToString();
+            fuelBox.Text = loadDataTable.Rows[rowIndex].Cells[2].Value.ToString();
+            yearBox.Text = loadDataTable.Rows[rowIndex].Cells[3].Value.ToString();
+            priceBox.Text = loadDataTable.Rows[rowIndex].Cells[4].Value.ToString();
+            qtyBox.Text = loadDataTable.Rows[rowIndex].Cells[5].Value.ToString();
+        }
+
+        private void CarForm_Load(object sender, EventArgs e)
+        {
+            car.myGridView = loadDataTable;
+            car.view();
+        }
+
+        private void updateBtn_Click(object sender, EventArgs e)
+        {
+            car.Update();
+        }
+
+        private void deletBtn_Click(object sender, EventArgs e)
+        {
+            car.delete();
+        }
     }
 }

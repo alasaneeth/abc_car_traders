@@ -1,6 +1,7 @@
 ﻿using abc_car_traders.LoginClass;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -60,7 +61,6 @@ namespace abc_car_traders.MyComClass
                 {
                     MessageBox.Show(message);
                     functioStatus = true;
-                    // loadTablefun();
                 }
                 else
                 {
@@ -99,7 +99,17 @@ namespace abc_car_traders.MyComClass
 
             return null;
         }
+
+        public void loadDataFromDatabaseInGridView(string sql, DataGridView _loadtable)
+        {
+            SqlDataAdapter date = new SqlDataAdapter(sql, con);
+            DataTable dt = new DataTable();
+            date.Fill(dt);
+            _loadtable.DataSource = dt;
+        }
     }
+
+
 
 }
 
