@@ -102,11 +102,26 @@ namespace abc_car_traders.MyComClass
 
         public void loadDataFromDatabaseInGridView(string sql, DataGridView _loadtable)
         {
-            SqlDataAdapter date = new SqlDataAdapter(sql, con);
+            SqlDataAdapter data = new SqlDataAdapter(sql, con);
             DataTable dt = new DataTable();
-            date.Fill(dt);
+            data.Fill(dt);
             _loadtable.DataSource = dt;
         }
+        public void partSearchFunction(string sql, DataGridView _loadtable, string carModel, string partName)
+        {
+            using (SqlDataAdapter data = new SqlDataAdapter(sql, con))
+            {
+                DataTable dt = new DataTable();
+                data.SelectCommand.Parameters.AddWithValue("@partName", (object)partName ?? DBNull.Value);
+                data.SelectCommand.Parameters.AddWithValue("@carModel", (object)carModel ?? DBNull.Value);
+
+                con.Open();
+                data.Fill(dt);
+                _loadtable.DataSource = dt;
+                con.Close();
+            }
+        }
+
     }
 
 

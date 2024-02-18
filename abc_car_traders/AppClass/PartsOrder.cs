@@ -1,0 +1,25 @@
+﻿using abc_car_traders.MyComClass;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace abc_car_traders.AppClass
+{
+    internal class PartsSerachFunction:DbClass
+    {
+        public string carModel {  get; set; }
+        public string partName { get; set; }
+        public DataGridView myGridView { get; set; }
+
+        public void search()
+        {
+            string sql = "SELECT * FROM Parts WHERE (@partName IS NULL OR partName = @partName OR partName LIKE '%' + @partName + '%') AND (@carModel IS NULL OR carModel = @carModel OR carModel LIKE '%' + @carModel + '%')";
+
+            partSearchFunction(sql, myGridView, carModel, partName);
+        }
+
+    }
+}

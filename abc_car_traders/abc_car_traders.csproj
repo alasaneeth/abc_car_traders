@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="AppClass\Car.cs" />
     <Compile Include="AppClass\CatParts.cs" />
+    <Compile Include="AppClass\PartsSerachFunction.cs" />
     <Compile Include="CarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +88,12 @@
     <Compile Include="Parts.Designer.cs">
       <DependentUpon>Parts.cs</DependentUpon>
     </Compile>
+    <Compile Include="PartsOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartsOrderForm.Designer.cs">
+      <DependentUpon>PartsOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="signUpForm.cs">
@@ -112,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Parts.resx">
       <DependentUpon>Parts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartsOrderForm.resx">
+      <DependentUpon>PartsOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
