@@ -1,10 +1,12 @@
 ﻿using abc_car_traders.MyComClass;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace abc_car_traders.LoginClass
@@ -20,6 +22,8 @@ namespace abc_car_traders.LoginClass
         public string userName { get; set; }
         public string password { get; set; }
         public string userRole { get; set; }
+        public DataGridView myGridView { get; set; }
+
 
         public bool loginStatus;
 
@@ -33,6 +37,44 @@ namespace abc_car_traders.LoginClass
                          "WHERE userName = '" + userName + "'";
 
                          loginStatus = executeQuery(sql, functionType.insert);
+        }
+
+        public void view()
+        {
+            string sql = "SELECT users_table.* FROM users_table JOIN UserRole_table ON users_table.userId = UserRole_table.userId WHERE UserRole_table.UserRole = 'customer'";
+            loadDataFromDatabaseInGridView(sql, myGridView);
+        }
+
+        public void Update()
+        {
+            string sql = "UPDATE users_table " +
+                        "SET firstName = '" + firstname + "', " +
+                        "lastName = '" + lastname + "', " +
+                        "nic = '" + nic + "', " +
+                        "tel = '" + tel + "', " +
+                        "address = '" + address + "', " +
+                        "password = '" + password + "' " +
+                        "WHERE userId = '" + userId + "'";
+
+            if (executeQuery(sql, functionType.update))
+            {
+                view();
+            }
+        }
+
+        public void delete()
+        {
+            string sql = "DELETE FROM UserRole_table " +
+                         "FROM UserRole_table INNER JOIN users_table " +
+                         "ON UserRole_table.userId = users_table.userId " +
+                         "WHERE users_table.userId = '" + userId + "'; " +
+                         "DELETE FROM users_table " +
+                         "WHERE userId = '" + userId + "';";
+
+            if (executeQuery(sql, functionType.delete))
+            {
+                view();
+            }
         }
 
 
