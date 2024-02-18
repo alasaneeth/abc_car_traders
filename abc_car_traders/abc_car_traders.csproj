@@ -54,7 +54,7 @@
     </Compile>
     <Compile Include="AppClass\Car.cs" />
     <Compile Include="AppClass\CatParts.cs" />
-    <Compile Include="AppClass\PartsSerachFunction.cs" />
+    <Compile Include="AppClass\PartsOrder.cs" />
     <Compile Include="CarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,8 +73,8 @@
     <Compile Include="CustomerMenu.Designer.cs">
       <DependentUpon>CustomerMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginClass\User.cs" />
-    <Compile Include="LoginClass\UserRegitration.cs" />
+    <Compile Include="AuthClass\User.cs" />
+    <Compile Include="AuthClass\UserRegitration.cs" />
     <Compile Include="LogInForm.cs">
       <SubType>Form</SubType>
     </Compile>

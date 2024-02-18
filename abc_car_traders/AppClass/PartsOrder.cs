@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace abc_car_traders.AppClass
 {
-    internal class PartsSerachFunction:DbClass
+    internal class PartsOrder:DbClass
     {
         public string carModel {  get; set; }
         public string partName { get; set; }
@@ -17,7 +17,6 @@ namespace abc_car_traders.AppClass
         public void search()
         {
             string sql = "SELECT * FROM Parts WHERE (@partName IS NULL OR partName = @partName OR partName LIKE '%' + @partName + '%') AND (@carModel IS NULL OR carModel = @carModel OR carModel LIKE '%' + @carModel + '%')";
-
             partSearchFunction(sql, myGridView, carModel, partName);
         }
 

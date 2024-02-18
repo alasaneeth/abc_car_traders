@@ -13,7 +13,7 @@ namespace abc_car_traders
 {
     public partial class PartsOrderForm : Form
     {
-        PartsSerachFunction parts = new PartsSerachFunction();
+        PartsOrder parts = new PartsOrder();
         public PartsOrderForm()
         {
             InitializeComponent();
