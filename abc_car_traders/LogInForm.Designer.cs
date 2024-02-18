@@ -111,7 +111,6 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "LogInForm";
             this.Text = "Log in form";
-            this.Load += new System.EventHandler(this.LogInForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
