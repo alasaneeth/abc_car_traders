@@ -49,6 +49,7 @@
             this.Controls.Add(this.label1);
             this.Name = "CustomerMenu";
             this.Text = "CustomerMenu";
+            this.Load += new System.EventHandler(this.CustomerMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
