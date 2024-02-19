@@ -75,28 +75,30 @@ namespace abc_car_traders.MyComClass
         public User AuthenticateUser(string userName, string password, string sql)
         {
             con.Open();
-                using (SqlCommand command = new SqlCommand(sql, con))
+
+            using (SqlCommand command = new SqlCommand(sql, con))
+            {
+                command.Parameters.AddWithValue("@userName", userName);
+                command.Parameters.AddWithValue("@password", password);
+
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    command.Parameters.AddWithValue("@userName", userName);
-                    command.Parameters.AddWithValue("@password", password);
-
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    if (reader.Read())
                     {
-                        if (reader.Read())
+                        User user = new User
                         {
-                            User user = new User
-                            {
-                                UserId = reader.GetInt32(0),
-                                UserName = reader.GetString(1),
-                                UserRole = reader.GetString(2)
-                            };
-
-                            return user;
-                        }
+                            UserId = reader.GetInt32(0),
+                            UserName = reader.GetString(1),
+                            UserRole = reader.GetString(2)
+                        };
+                        
+                        con.Close(); // Close the connection inside the using block
+                        return user;
                     }
                 }
-            
+            }
 
+            con.Close(); // Close the connection in case of no user found
             return null;
         }
 

@@ -82,6 +82,7 @@
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(287, 26);
             this.passwordBox.TabIndex = 3;
+            this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
             // 
             // label2
             // 
@@ -100,7 +101,7 @@
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.Size = new System.Drawing.Size(287, 26);
             this.usernameBox.TabIndex = 1;
-            this.usernameBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             // 
             // LogInForm
             // 
