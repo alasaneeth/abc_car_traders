@@ -119,6 +119,7 @@
             this.Controls.Add(this.label1);
             this.Name = "PartsOrderForm";
             this.Text = "PartsOrderForm";
+            this.Load += new System.EventHandler(this.PartsOrderForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.loadDataTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

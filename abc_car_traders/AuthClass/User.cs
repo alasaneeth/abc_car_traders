@@ -17,6 +17,11 @@ namespace abc_car_traders.LoginClass
 
         public bool loginStatus = false;
 
+        
+        
+
+
+
         public void login()
         {
 
@@ -27,8 +32,11 @@ namespace abc_car_traders.LoginClass
 
            User authernicateduser = AuthenticateUser(UserName, Password, sql);
 
+            UserId = authernicateduser.UserId;
 
-            if(authernicateduser.UserRole != null)
+            
+
+            if (authernicateduser.UserRole != null)
             {
                 if (authernicateduser.UserRole == "admin")
                 {
@@ -37,7 +45,7 @@ namespace abc_car_traders.LoginClass
                 }
                 else if (authernicateduser.UserRole == "customer")
                 {
-                    new CustomerMenu().Show();
+                    new CustomerMenu(UserId).Show();
                     loginStatus = true;
                 }
                 else
