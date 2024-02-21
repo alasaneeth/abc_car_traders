@@ -37,18 +37,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.fuelBox = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.modelBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
             this.deletBtn = new System.Windows.Forms.Button();
             this.loadDataTable = new System.Windows.Forms.DataGridView();
+            this.modelBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadDataTable)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.modelBox);
             this.groupBox1.Controls.Add(this.qtyBox);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.priceBox);
@@ -57,10 +59,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.fuelBox);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.modelBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(27, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(593, 226);
@@ -130,8 +131,9 @@
             this.fuelBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fuelBox.FormattingEnabled = true;
             this.fuelBox.Items.AddRange(new object[] {
-            "Petole",
-            "Diesel"});
+            "Petrole",
+            "Diesel",
+            "Hibrid"});
             this.fuelBox.Location = new System.Drawing.Point(198, 71);
             this.fuelBox.Name = "fuelBox";
             this.fuelBox.Size = new System.Drawing.Size(370, 26);
@@ -147,20 +149,6 @@
             this.label2.Size = new System.Drawing.Size(90, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Fuel Type:";
-            // 
-            // modelBox
-            // 
-            this.modelBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modelBox.FormattingEnabled = true;
-            this.modelBox.Items.AddRange(new object[] {
-            "Honda-vezel",
-            "Toyot-corella",
-            "Maruthi-Suzuki"});
-            this.modelBox.Location = new System.Drawing.Point(198, 39);
-            this.modelBox.Name = "modelBox";
-            this.modelBox.Size = new System.Drawing.Size(370, 26);
-            this.modelBox.TabIndex = 1;
-            this.modelBox.SelectedIndexChanged += new System.EventHandler(this.modelBox_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -221,17 +209,27 @@
             this.loadDataTable.TabIndex = 2;
             this.loadDataTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loadDataTable_CellContentClick);
             // 
+            // modelBox
+            // 
+            this.modelBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modelBox.Location = new System.Drawing.Point(198, 42);
+            this.modelBox.Name = "modelBox";
+            this.modelBox.Size = new System.Drawing.Size(370, 26);
+            this.modelBox.TabIndex = 10;
+            this.modelBox.TextChanged += new System.EventHandler(this.modelBox_TextChanged);
+            // 
             // CarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(660, 517);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(660, 552);
             this.Controls.Add(this.loadDataTable);
             this.Controls.Add(this.deletBtn);
             this.Controls.Add(this.updateBtn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CarForm";
             this.Text = "Car Form";
             this.Load += new System.EventHandler(this.CarForm_Load);
@@ -245,7 +243,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox modelBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox qtyBox;
         private System.Windows.Forms.Label label5;
@@ -259,5 +256,6 @@
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button deletBtn;
         private System.Windows.Forms.DataGridView loadDataTable;
+        private System.Windows.Forms.TextBox modelBox;
     }
 }

@@ -48,10 +48,7 @@ namespace abc_car_traders
             form.Show();
         }
 
-        private void carPartsDetailsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            formLoadInPanel(new PartsOrderForm(), formLoadArea);
-        }
+        
 
         private void formLoadArea_Paint_1(object sender, PaintEventArgs e)
         {
@@ -61,7 +58,7 @@ namespace abc_car_traders
 
         private void partsOrderBtn_Click(object sender, EventArgs e)
         {
-            formLoadInPanel(new PartsOrderForm(), formLoadArea);
+            formLoadInPanel(new PartsOrderForm(LoginUserId), formLoadArea);
         }
 
         private void formLoadArea_Paint_2(object sender, PaintEventArgs e)

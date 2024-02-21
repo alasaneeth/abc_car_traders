@@ -41,5 +41,10 @@ namespace abc_car_traders
         {
             user.Password = passwordBox.Text;
         }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -26,10 +26,7 @@ namespace abc_car_traders.AppClass
             partSearchFunction(sql, myGridView, carModel, partName);
         }
 
-        public void saveParcelOrder()
-        {
-            MessageBox.Show(lastTotal.ToString());
-        }
+     
         
 
     }

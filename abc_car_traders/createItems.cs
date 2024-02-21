@@ -11,22 +11,18 @@ using System.Windows.Forms;
 
 namespace abc_car_traders
 {
-    public partial class AdminMenu : Form
+    public partial class createItems : Form
     {
         myComClass menu = new myComClass();
-        public AdminMenu()
+        public createItems()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void createCarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            menu.formLoadInPanel(new CarForm(), formloadArea);
-        }
-
-        private void createItem_Click(object sender, EventArgs e)
-        {
-            menu.formLoadInPanel(new createItems(), formloadArea);
+            menu.formLoadInPanel(new createCarForm(), formloadArea);
         }
     }
 }
+

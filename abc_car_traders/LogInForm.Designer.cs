@@ -34,6 +34,7 @@
             this.passwordBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.usernameBox = new System.Windows.Forms.TextBox();
+            this.closeButton = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,8 +56,8 @@
             this.groupBox1.Controls.Add(this.usernameBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(36, 35);
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(35, 46);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(446, 225);
             this.groupBox1.TabIndex = 1;
@@ -80,6 +81,7 @@
             this.passwordBox.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordBox.Location = new System.Drawing.Point(126, 108);
             this.passwordBox.Name = "passwordBox";
+            this.passwordBox.PasswordChar = '*';
             this.passwordBox.Size = new System.Drawing.Size(287, 26);
             this.passwordBox.TabIndex = 3;
             this.passwordBox.TextChanged += new System.EventHandler(this.passwordBox_TextChanged);
@@ -103,18 +105,33 @@
             this.usernameBox.TabIndex = 1;
             this.usernameBox.TextChanged += new System.EventHandler(this.usernameBox_TextChanged);
             // 
+            // closeButton
+            // 
+            this.closeButton.AutoSize = true;
+            this.closeButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeButton.Location = new System.Drawing.Point(467, 9);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(18, 18);
+            this.closeButton.TabIndex = 2;
+            this.closeButton.Text = "X";
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
             // LogInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(513, 295);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(513, 302);
+            this.Controls.Add(this.closeButton);
             this.Controls.Add(this.groupBox1);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LogInForm";
             this.Text = "Log in form";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -126,6 +143,7 @@
         private System.Windows.Forms.Button logInBtn;
         private System.Windows.Forms.TextBox passwordBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label closeButton;
     }
 }
 

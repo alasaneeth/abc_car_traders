@@ -15,11 +15,17 @@ namespace abc_car_traders
     {
         int quantity;
         decimal price;
+        int LoginUserId;
         PartsOrder parts = new PartsOrder();
         public PartsOrderForm()
         {
             InitializeComponent();
 
+        }
+        public PartsOrderForm(int loginUserId)
+        {
+            InitializeComponent();
+            parts.userId = loginUserId;
         }
 
         private void modelBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -47,23 +53,6 @@ namespace abc_car_traders
            
         }
 
-
-        private void AddBtn_Click(object sender, EventArgs e)
-        {
-            stockHistry.Rows.Add(idBox.Text, desBox.Text, qtyBox.Text, unitPriceBox.Text,totalBox.Text);
-            clearFiled();
-            CalculateTotalSum();
-        }
-
-        private void clearFiled()
-        {
-            idBox.Text = "";
-            desBox.Text = "";
-            qtyBox.Text = "0";
-            unitPriceBox.Text ="0.00";
-            totalBox.Text = "0.00";
-        }
-
         private void qtyBox_TextChanged(object sender, EventArgs e)
         {
            string qty = qtyBox.Text != "" ? qtyBox.Text : "0";
@@ -81,38 +70,8 @@ namespace abc_car_traders
         {
             decimal total = price * quantity;
             totalBox.Text = total.ToString();
-            
-        }
-
-        private void CalculateTotalSum()
-        {
-            decimal sum = 0;
-
-            foreach (DataGridViewRow row in stockHistry.Rows)
-            {
-                string totalStringValue = row.Cells[4].Value?.ToString();
-
-                sum += decimal.TryParse(totalStringValue, out decimal totalValue) ? totalValue : 0;
-            }
-           parts.lastTotal = sum;
-           lastTotal.Text = sum.ToString();
-        }
-
-        private void addOrderButton_Click(object sender, EventArgs e)
-        {
-            //if(stockHistry.Rows.Count == 0)
-            //{
-            //    MessageBox.Show("Please Add Products");
-            //    return;
-
-            //}
-            //if(nameBox.Text== "" || bankBox.Text == "" ||  cardNoBox.Text == "" ||  cvcBox.Text == "" ||  amountBox.Text == "")
-            //{
-            //    MessageBox.Show("Please fill Payment Details");
-            //    return;
-            //}
-
-            parts.saveParcelOrder();
-        }
+         
+        }   
+        
     }
 }

@@ -19,10 +19,7 @@ namespace abc_car_traders
             InitializeComponent();
         }
 
-        private void modelBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            car.model = modelBox.Text;
-        }
+       
 
         private void fuelBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -74,6 +71,12 @@ namespace abc_car_traders
         private void deletBtn_Click(object sender, EventArgs e)
         {
             car.delete();
+        }
+
+        private void modelBox_TextChanged(object sender, EventArgs e)
+        {
+            car.model = modelBox.Text;
+
         }
     }
 }

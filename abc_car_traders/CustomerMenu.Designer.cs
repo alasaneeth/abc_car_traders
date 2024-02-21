@@ -52,7 +52,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(198, 363);
+            this.panel1.Size = new System.Drawing.Size(198, 469);
             this.panel1.TabIndex = 1;
             // 
             // partsOrderBtn
@@ -78,7 +78,7 @@
             this.formLoadArea.Dock = System.Windows.Forms.DockStyle.Top;
             this.formLoadArea.Location = new System.Drawing.Point(198, 0);
             this.formLoadArea.Name = "formLoadArea";
-            this.formLoadArea.Size = new System.Drawing.Size(620, 360);
+            this.formLoadArea.Size = new System.Drawing.Size(895, 469);
             this.formLoadArea.TabIndex = 2;
             this.formLoadArea.Paint += new System.Windows.Forms.PaintEventHandler(this.formLoadArea_Paint_2);
             // 
@@ -88,7 +88,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(818, 363);
+            this.ClientSize = new System.Drawing.Size(1093, 469);
             this.Controls.Add(this.formLoadArea);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);

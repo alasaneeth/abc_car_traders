@@ -53,6 +53,16 @@ namespace abc_car_traders.AppClass
             }
 
         }
+        public void formLoadInPanel(Form form, Panel panel)
+        {
+            panel.Controls.Clear();
+            form.TopLevel = false;
+            form.AutoScroll = true;
+            panel.Controls.Add(form);
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.Dock = DockStyle.Fill;
+            form.Show();
+        }
 
 
     }

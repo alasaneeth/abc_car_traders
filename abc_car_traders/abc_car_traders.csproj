@@ -54,12 +54,25 @@
     </Compile>
     <Compile Include="AppClass\Car.cs" />
     <Compile Include="AppClass\CatParts.cs" />
+    <Compile Include="AppClass\myComClass.cs" />
     <Compile Include="AppClass\PartsOrder.cs" />
     <Compile Include="CarForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CarForm.Designer.cs">
       <DependentUpon>CarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="createCarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createCarForm.Designer.cs">
+      <DependentUpon>createCarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="createItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="createItems.Designer.cs">
+      <DependentUpon>createItems.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerDetailsForm.cs">
       <SubType>Form</SubType>
@@ -113,6 +126,12 @@
     <EmbeddedResource Include="CarForm.resx">
       <DependentUpon>CarForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="createCarForm.resx">
+      <DependentUpon>createCarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="createItems.resx">
+      <DependentUpon>createItems.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerDetailsForm.resx">
       <DependentUpon>CustomerDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppClass\createCar.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace abc_car_traders.MyComClass
 {
@@ -20,8 +21,16 @@ namespace abc_car_traders.MyComClass
     }
     internal class DbClass
     {
-        private SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-BQ6F8LG\SQLEXPRESS;Initial Catalog=abc_cars;Integrated Security=True");
+        public SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-BQ6F8LG\SQLEXPRESS;Initial Catalog=abc_cars;Integrated Security=True");
 
+      
+
+        public void ExecuteScalar(string sql)
+        {
+            SqlDataAdapter data = new SqlDataAdapter(sql, con);
+            DataTable dt = new DataTable();
+            data.Fill(dt);
+        }
         public bool executeQuery(string sql, functionType _functionType)
         {
             bool functionRunStatus = false;
