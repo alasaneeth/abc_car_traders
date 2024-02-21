@@ -30,9 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.partsOrderBtn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.prtsBtn = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.formLoadArea = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -48,57 +47,53 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.prtsBtn);
+            this.panel1.Controls.Add(this.partsOrderBtn);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(187, 450);
+            this.panel1.Size = new System.Drawing.Size(198, 363);
             this.panel1.TabIndex = 1;
+            // 
+            // partsOrderBtn
+            // 
+            this.partsOrderBtn.Location = new System.Drawing.Point(12, 58);
+            this.partsOrderBtn.Name = "partsOrderBtn";
+            this.partsOrderBtn.Size = new System.Drawing.Size(180, 45);
+            this.partsOrderBtn.TabIndex = 0;
+            this.partsOrderBtn.Text = "Parts Order";
+            this.partsOrderBtn.UseVisualStyleBackColor = true;
+            this.partsOrderBtn.Click += new System.EventHandler(this.partsOrderBtn_Click);
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(187, 48);
-            this.panel2.TabIndex = 0;
-            // 
-            // prtsBtn
-            // 
-            this.prtsBtn.Location = new System.Drawing.Point(4, 55);
-            this.prtsBtn.Name = "prtsBtn";
-            this.prtsBtn.Size = new System.Drawing.Size(183, 39);
-            this.prtsBtn.TabIndex = 1;
-            this.prtsBtn.Text = "Parts";
-            this.prtsBtn.UseVisualStyleBackColor = true;
-            this.prtsBtn.Click += new System.EventHandler(this.prtsBtn_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(187, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(613, 49);
-            this.panel3.TabIndex = 2;
+            this.panel2.Size = new System.Drawing.Size(198, 52);
+            this.panel2.TabIndex = 2;
             // 
             // formLoadArea
             // 
-            this.formLoadArea.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.formLoadArea.Location = new System.Drawing.Point(187, 49);
+            this.formLoadArea.Dock = System.Windows.Forms.DockStyle.Top;
+            this.formLoadArea.Location = new System.Drawing.Point(198, 0);
             this.formLoadArea.Name = "formLoadArea";
-            this.formLoadArea.Size = new System.Drawing.Size(613, 401);
-            this.formLoadArea.TabIndex = 3;
+            this.formLoadArea.Size = new System.Drawing.Size(620, 360);
+            this.formLoadArea.TabIndex = 2;
+            this.formLoadArea.Paint += new System.Windows.Forms.PaintEventHandler(this.formLoadArea_Paint_2);
             // 
             // CustomerMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.ClientSize = new System.Drawing.Size(818, 363);
             this.Controls.Add(this.formLoadArea);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "CustomerMenu";
             this.Text = "CustomerMenu";
             this.Load += new System.EventHandler(this.CustomerMenu_Load);
@@ -112,9 +107,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button partsOrderBtn;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button prtsBtn;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel formLoadArea;
     }
 }
