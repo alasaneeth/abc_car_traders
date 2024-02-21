@@ -94,23 +94,25 @@ namespace abc_car_traders
 
                 sum += decimal.TryParse(totalStringValue, out decimal totalValue) ? totalValue : 0;
             }
-
+           parts.lastTotal = sum;
            lastTotal.Text = sum.ToString();
         }
 
         private void addOrderButton_Click(object sender, EventArgs e)
         {
-            if(stockHistry.Rows.Count == 0)
-            {
-                MessageBox.Show("Please Add Products");
-                return;
+            //if(stockHistry.Rows.Count == 0)
+            //{
+            //    MessageBox.Show("Please Add Products");
+            //    return;
 
-            }
-            if(nameBox.Text== "" || bankBox.Text == "" ||  cardNoBox.Text == "" ||  cvcBox.Text == "" ||  amountBox.Text == "")
-            {
-                MessageBox.Show("Please fill Payment Details");
-                return;
-            }
+            //}
+            //if(nameBox.Text== "" || bankBox.Text == "" ||  cardNoBox.Text == "" ||  cvcBox.Text == "" ||  amountBox.Text == "")
+            //{
+            //    MessageBox.Show("Please fill Payment Details");
+            //    return;
+            //}
+
+            parts.saveParcelOrder();
         }
     }
 }
