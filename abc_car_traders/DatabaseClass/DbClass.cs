@@ -133,6 +133,17 @@ namespace abc_car_traders.MyComClass
             }
         }
 
+        public void loadCombo(string sql,ComboBox comboBox, string displayMember, string valueMember)
+        {
+            SqlDataAdapter data = new SqlDataAdapter(sql, con);
+             DataTable dt = new DataTable();
+            data.Fill(dt);
+            comboBox.DataSource = dt;
+            comboBox.DisplayMember = displayMember;
+            comboBox.ValueMember = valueMember;
+            comboBox.SelectedIndex = -1;
+        }
+
     }
 
 

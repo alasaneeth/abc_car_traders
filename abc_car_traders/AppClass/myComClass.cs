@@ -9,6 +9,9 @@ namespace abc_car_traders.AppClass
 {
     internal class myComClass
     {
+
+      public  string addMessage = "Please Add Any Value";
+
         public void formLoadInPanel(Form form, Panel panel)
         {
             panel.Controls.Clear();
@@ -30,6 +33,19 @@ namespace abc_car_traders.AppClass
                 }
             }
             return false;
+        }
+
+        public bool CheckValidateFields(params TextBox[] textBoxes)
+        {
+            return IsAnyValueEmpty(textBoxes.Select(tb => tb.Text).ToArray());
+        }
+
+        public void ClearTextBoxes(params TextBox[] textBoxes)
+        {
+            foreach (TextBox textBox in textBoxes)
+            {
+                textBox.Text = "";
+            }
         }
     }
 }
