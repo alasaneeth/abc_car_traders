@@ -15,6 +15,8 @@ namespace abc_car_traders
     public partial class CustomerDetailsForm : Form
     {
         UserRegitration user = new UserRegitration();
+        AppClass.MyComClass comClass = new AppClass.MyComClass();
+        string AddMessage = "Pleas Fill all fields"; 
         public CustomerDetailsForm()
         {
             InitializeComponent();
@@ -79,18 +81,59 @@ namespace abc_car_traders
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            user.UserRegistration();
-            user.view();
+            if(IsNotValid())
+            {
+                MessageBox.Show(AddMessage);
+            }else
+            {
+                user.UserRegistration();
+                user.view();
+                clearFields();
+            }
+         
         }
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            user.Update();
+            if (IsNotValid())
+            {
+                MessageBox.Show(AddMessage);
+            }
+            else
+            {
+                user.Update();
+                user.view();
+                clearFields();
+            }
+         
         }
 
         private void deletBtn_Click(object sender, EventArgs e)
         {
-            user.delete();
+
+            if (IsNotValid())
+            {
+                MessageBox.Show(AddMessage);
+            }
+            else
+            {
+                user.delete();
+                user.view();
+                clearFields();
+            }
+          
         }
+
+        private void clearFields()
+        {
+            comClass.ClearTextBoxes(firstNameBox, lastNameBox, nicBox, telBox, addressBox, userNameBox, passwordBox);
+
+        }
+        private bool IsNotValid()
+        {
+            return comClass.CheckValidateFields(firstNameBox, lastNameBox, nicBox, telBox, addressBox, userNameBox, passwordBox);
+        }
+
+
     }
 }

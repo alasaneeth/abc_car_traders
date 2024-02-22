@@ -54,25 +54,13 @@
     </Compile>
     <Compile Include="AppClass\Car.cs" />
     <Compile Include="AppClass\CatParts.cs" />
-    <Compile Include="AppClass\myComClass.cs" />
+    <Compile Include="AppClass\MyComClass.cs" />
     <Compile Include="AppClass\PartsOrder.cs" />
     <Compile Include="CarForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CarForm.Designer.cs">
       <DependentUpon>CarForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="createCarForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="createCarForm.Designer.cs">
-      <DependentUpon>createCarForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="createItems.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="createItems.Designer.cs">
-      <DependentUpon>createItems.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerDetailsForm.cs">
       <SubType>Form</SubType>
@@ -101,10 +89,6 @@
     <Compile Include="Parts.Designer.cs">
       <DependentUpon>Parts.cs</DependentUpon>
     </Compile>
-    <Compile Include="CeratePartsname.cs" />
-    <Compile Include="CeratePartsname.Designer.cs">
-      <DependentUpon>CeratePartsname.cs</DependentUpon>
-    </Compile>
     <Compile Include="PartsOrderForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,15 +110,10 @@
     </Compile>
     <EmbeddedResource Include="AdminMenu.resx">
       <DependentUpon>AdminMenu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="CarForm.resx">
       <DependentUpon>CarForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="createCarForm.resx">
-      <DependentUpon>createCarForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="createItems.resx">
-      <DependentUpon>createItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerDetailsForm.resx">
       <DependentUpon>CustomerDetailsForm.cs</DependentUpon>
@@ -147,9 +126,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Parts.resx">
       <DependentUpon>Parts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CeratePartsname.resx">
-      <DependentUpon>CeratePartsname.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PartsOrderForm.resx">
       <DependentUpon>PartsOrderForm.cs</DependentUpon>

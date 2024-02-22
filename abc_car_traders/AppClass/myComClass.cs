@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace abc_car_traders.AppClass
 {
-    internal class myComClass
+    internal class MyComClass
     {
 
       public  string addMessage = "Please Add Any Value";

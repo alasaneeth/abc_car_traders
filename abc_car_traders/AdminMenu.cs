@@ -13,27 +13,15 @@ namespace abc_car_traders
 {
     public partial class AdminMenu : Form
     {
-        myComClass menu = new myComClass();
+        AppClass.MyComClass com = new AppClass.MyComClass();
         public AdminMenu()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void customerBtn_Click(object sender, EventArgs e)
         {
-            menu.formLoadInPanel(new CarForm(), formloadArea);
-        }
-
-      
-
-        private void formloadArea_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void createItem_Click(object sender, EventArgs e)
-        {
-
+            com.formLoadInPanel(new CustomerDetailsForm(), formloadArea);
         }
     }
 }
