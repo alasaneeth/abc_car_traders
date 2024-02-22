@@ -24,9 +24,16 @@ namespace abc_car_traders
             menu.formLoadInPanel(new CarForm(), formloadArea);
         }
 
+      
+
+        private void formloadArea_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void createItem_Click(object sender, EventArgs e)
         {
-            menu.formLoadInPanel(new createItems(), formloadArea);
+
         }
     }
 }
