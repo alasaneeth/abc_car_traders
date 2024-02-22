@@ -22,7 +22,7 @@ namespace abc_car_traders.AppClass
 
         public void save()
         {
-            string sql = "INSERT INTO Cars (carModel,fuelType, year, Price, AvailableQuantity) VALUES  ( '" + model + "','" + fuelType + "'," + year + ", " + price + ", " + qty + ")";
+            string sql = "INSERT INTO cars (model,fuelType, year, Price, AvailableQuantity) VALUES  ( '" + model + "','" + fuelType + "'," + year + ", " + price + ", " + qty + ")";
             if (executeQuery(sql, functionType.insert)) 
             {
                 view();
@@ -37,7 +37,7 @@ namespace abc_car_traders.AppClass
 
         public void Update()
         {
-            string sql = "update Cars set carModel='" + model + "', fuelType='" + fuelType + "', year='" + year + "', Price='" + price + "', AvailableQuantity='" + qty + "' where carId = '" + Id + "'";
+            string sql = "UPDATE cars SET model = '" + model + "', fuelType = '" + fuelType + "', year = " + year + ", Price = " + price + ", AvailableQuantity = " + qty + " WHERE id = '"+ Id + "'";
             if (executeQuery(sql, functionType.update))
             {
                 view();
@@ -46,24 +46,14 @@ namespace abc_car_traders.AppClass
 
         public void delete()
         {
-            string sql = "Delete from Cars where carId =" + Id;
+            string sql = "Delete from cars where id =" + Id;
             if (executeQuery(sql, functionType.delete))
             {
                 view();
             }
 
         }
-        public void formLoadInPanel(Form form, Panel panel)
-        {
-            panel.Controls.Clear();
-            form.TopLevel = false;
-            form.AutoScroll = true;
-            panel.Controls.Add(form);
-            form.FormBorderStyle = FormBorderStyle.None;
-            form.Dock = DockStyle.Fill;
-            form.Show();
-        }
-
+       
 
     }
 }

@@ -23,5 +23,10 @@ namespace abc_car_traders
         {
             com.formLoadInPanel(new CustomerDetailsForm(), formloadArea);
         }
+
+        private void carBtn_Click(object sender, EventArgs e)
+        {
+            com.formLoadInPanel(new CarForm(), formloadArea);
+        }
     }
 }

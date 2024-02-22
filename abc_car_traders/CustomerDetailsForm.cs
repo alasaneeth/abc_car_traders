@@ -126,7 +126,7 @@ namespace abc_car_traders
 
         private void clearFields()
         {
-            comClass.ClearTextBoxes(firstNameBox, lastNameBox, nicBox, telBox, addressBox, userNameBox, passwordBox);
+            comClass.clearcontroles(firstNameBox, lastNameBox, nicBox, telBox, addressBox, userNameBox, passwordBox);
 
         }
         private bool IsNotValid()

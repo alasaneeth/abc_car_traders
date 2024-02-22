@@ -35,16 +35,23 @@ namespace abc_car_traders.AppClass
             return false;
         }
 
-        public bool CheckValidateFields(params TextBox[] textBoxes)
+        public bool CheckValidateFields(params Control[] controls)
         {
-            return IsAnyValueEmpty(textBoxes.Select(tb => tb.Text).ToArray());
+            return IsAnyValueEmpty(controls.Select(tb => tb.Text).ToArray());
         }
 
-        public void ClearTextBoxes(params TextBox[] textBoxes)
+        public void clearcontroles(params Control[] controls)
         {
-            foreach (TextBox textBox in textBoxes)
+            foreach (Control control in controls)
             {
-                textBox.Text = "";
+                if (control is TextBox textBox)
+                {
+                    textBox.Text = "";
+                }
+                else if (control is ComboBox comboBox)
+                {
+                    comboBox.SelectedIndex = -1;
+                }
             }
         }
     }

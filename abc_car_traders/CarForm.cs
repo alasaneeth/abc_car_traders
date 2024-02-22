@@ -1,4 +1,5 @@
 ﻿using abc_car_traders.AppClass;
+using abc_car_traders.LoginClass;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,12 +9,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace abc_car_traders
 {
     public partial class CarForm : Form
     {
         Car car = new Car();
+        AppClass.MyComClass comClass = new AppClass.MyComClass();
+        string AddMessage = "Pleas Fill all fields";
+
         public CarForm()
         {
             InitializeComponent();
@@ -28,22 +33,44 @@ namespace abc_car_traders
 
         private void yearBox_TextChanged(object sender, EventArgs e)
         {
-            car.year = Convert.ToInt32(yearBox.Text);
+            if (int.TryParse(yearBox.Text, out int year))
+            {
+                car.year =year;
+            }
+           
         }
 
         private void priceBox_TextChanged(object sender, EventArgs e)
         {
-            car.price = Convert.ToDecimal(priceBox.Text);
+
+            if (int.TryParse(priceBox.Text, out int price))
+            {
+                car.price = price;
+            }
+           
         }
 
         private void qtyBox_TextChanged(object sender, EventArgs e)
         {
-            car.qty = Convert.ToInt32(qtyBox.Text);
+            if (int.TryParse(qtyBox.Text, out int qty))
+            {
+                car.qty = qty;
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void saveBtn(object sender, EventArgs e)
         {
-            car.save();
+            if (IsNotValid())
+            {
+                MessageBox.Show(AddMessage);
+            }
+            else
+            {
+                car.save();
+                car.view();
+                clearFields();
+            }
+           
         }
 
         private void loadDataTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -65,18 +92,50 @@ namespace abc_car_traders
 
         private void updateBtn_Click(object sender, EventArgs e)
         {
-            car.Update();
+            if (IsNotValid())
+            {
+                MessageBox.Show(AddMessage);
+            }
+            else
+            {
+                car.Update();
+                car.view();
+                clearFields();
+            }
+           
         }
 
         private void deletBtn_Click(object sender, EventArgs e)
         {
-            car.delete();
+
+            if (IsNotValid())
+            {
+                MessageBox.Show(AddMessage);
+            }
+            else
+            {
+                car.delete();
+                car.view();
+                clearFields();
+            }
+          
         }
 
-        private void modelBox_TextChanged(object sender, EventArgs e)
+        private void modelBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             car.model = modelBox.Text;
 
         }
+        private void clearFields()
+        {
+            comClass.clearcontroles(modelBox, fuelBox, yearBox, priceBox, qtyBox);
+
+        }
+        private bool IsNotValid()
+        {
+            return comClass.CheckValidateFields(modelBox, fuelBox, yearBox, priceBox, qtyBox);
+
+        }
+
     }
 }

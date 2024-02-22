@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.modelBox = new System.Windows.Forms.ComboBox();
             this.qtyBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.priceBox = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.updateBtn = new System.Windows.Forms.Button();
             this.deletBtn = new System.Windows.Forms.Button();
             this.loadDataTable = new System.Windows.Forms.DataGridView();
-            this.modelBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadDataTable)).BeginInit();
             this.SuspendLayout();
@@ -64,15 +64,30 @@
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
             this.groupBox1.Location = new System.Drawing.Point(27, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(593, 226);
+            this.groupBox1.Size = new System.Drawing.Size(593, 237);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Car Details";
             // 
+            // modelBox
+            // 
+            this.modelBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modelBox.FormattingEnabled = true;
+            this.modelBox.Items.AddRange(new object[] {
+            "Alto",
+            "Prius",
+            "Fit",
+            "Vezel"});
+            this.modelBox.Location = new System.Drawing.Point(198, 39);
+            this.modelBox.Name = "modelBox";
+            this.modelBox.Size = new System.Drawing.Size(370, 26);
+            this.modelBox.TabIndex = 10;
+            this.modelBox.SelectedIndexChanged += new System.EventHandler(this.modelBox_SelectedIndexChanged);
+            // 
             // qtyBox
             // 
             this.qtyBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.qtyBox.Location = new System.Drawing.Point(198, 167);
+            this.qtyBox.Location = new System.Drawing.Point(198, 172);
             this.qtyBox.Name = "qtyBox";
             this.qtyBox.Size = new System.Drawing.Size(370, 26);
             this.qtyBox.TabIndex = 9;
@@ -82,7 +97,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(44, 170);
+            this.label5.Location = new System.Drawing.Point(44, 175);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(123, 18);
             this.label5.TabIndex = 8;
@@ -91,7 +106,7 @@
             // priceBox
             // 
             this.priceBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceBox.Location = new System.Drawing.Point(198, 135);
+            this.priceBox.Location = new System.Drawing.Point(198, 140);
             this.priceBox.Name = "priceBox";
             this.priceBox.Size = new System.Drawing.Size(370, 26);
             this.priceBox.TabIndex = 7;
@@ -101,7 +116,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(112, 138);
+            this.label4.Location = new System.Drawing.Point(112, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 18);
             this.label4.TabIndex = 6;
@@ -164,19 +179,19 @@
             // 
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(304, 244);
+            this.button1.Location = new System.Drawing.Point(307, 269);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 34);
             this.button1.TabIndex = 1;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.saveBtn);
             // 
             // updateBtn
             // 
             this.updateBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.updateBtn.ForeColor = System.Drawing.Color.Black;
-            this.updateBtn.Location = new System.Drawing.Point(398, 244);
+            this.updateBtn.Location = new System.Drawing.Point(401, 269);
             this.updateBtn.Name = "updateBtn";
             this.updateBtn.Size = new System.Drawing.Size(101, 34);
             this.updateBtn.TabIndex = 1;
@@ -188,7 +203,7 @@
             // 
             this.deletBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.deletBtn.ForeColor = System.Drawing.Color.Black;
-            this.deletBtn.Location = new System.Drawing.Point(528, 244);
+            this.deletBtn.Location = new System.Drawing.Point(531, 269);
             this.deletBtn.Name = "deletBtn";
             this.deletBtn.Size = new System.Drawing.Size(92, 34);
             this.deletBtn.TabIndex = 1;
@@ -200,23 +215,16 @@
             // 
             this.loadDataTable.AllowUserToAddRows = false;
             this.loadDataTable.AllowUserToDeleteRows = false;
+            this.loadDataTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.loadDataTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.loadDataTable.BackgroundColor = System.Drawing.Color.White;
             this.loadDataTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.loadDataTable.Location = new System.Drawing.Point(27, 295);
+            this.loadDataTable.Location = new System.Drawing.Point(27, 337);
             this.loadDataTable.Name = "loadDataTable";
             this.loadDataTable.ReadOnly = true;
-            this.loadDataTable.Size = new System.Drawing.Size(621, 210);
+            this.loadDataTable.Size = new System.Drawing.Size(606, 203);
             this.loadDataTable.TabIndex = 2;
             this.loadDataTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loadDataTable_CellContentClick);
-            // 
-            // modelBox
-            // 
-            this.modelBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modelBox.Location = new System.Drawing.Point(198, 42);
-            this.modelBox.Name = "modelBox";
-            this.modelBox.Size = new System.Drawing.Size(370, 26);
-            this.modelBox.TabIndex = 10;
-            this.modelBox.TextChanged += new System.EventHandler(this.modelBox_TextChanged);
             // 
             // CarForm
             // 
@@ -256,6 +264,6 @@
         private System.Windows.Forms.Button updateBtn;
         private System.Windows.Forms.Button deletBtn;
         private System.Windows.Forms.DataGridView loadDataTable;
-        private System.Windows.Forms.TextBox modelBox;
+        private System.Windows.Forms.ComboBox modelBox;
     }
 }
