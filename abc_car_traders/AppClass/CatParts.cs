@@ -14,14 +14,14 @@ namespace abc_car_traders.AppClass
     {
         public int Id { get; set; }
         public string partName { get; set; }
-        public string carModel { get; set; }
+        public string carmodel { get; set; }
         public decimal price { get; set; }
         public int qty { get; set; }
         public DataGridView myGridView { get; set; }
 
         public void save()
         {
-            string sql = "INSERT INTO Parts ( partName, carModel, Price, AvailableQuantity) VALUES  ( '" + partName + "','" + carModel + "'," + price + ", " + qty + ")";
+            string sql = "INSERT INTO car_parts ( name, carModel, price, availableQty) VALUES  ( '" + partName + "','" + carmodel + "'," + price + ", " + qty + ")";
             if (executeQuery(sql, functionType.insert))
             {
                 view();
@@ -30,13 +30,13 @@ namespace abc_car_traders.AppClass
         }
         public void view()
         {
-            string sql = "select * from Parts;";
+            string sql = "select * from car_parts;";
             loadDataFromDatabaseInGridView(sql, myGridView);
         }
 
         public void Update()
         {
-            string sql = "update Parts set carModel ='" + carModel + "', Price='" + price + "', AvailableQuantity='" + qty + "' where partId  = '" + Id + "'";
+            string sql = "update car_parts set carModel ='" + carmodel + "', Price='" + price + "', availableQty='" + qty + "' where id  = '" + Id + "'";
             if (executeQuery(sql, functionType.update))
             {
                 view();
@@ -45,7 +45,7 @@ namespace abc_car_traders.AppClass
 
         public void delete()
         {
-            string sql = "Delete from Parts where partId =" + Id;
+            string sql = "Delete from car_parts where id =" + Id;
             if (executeQuery(sql, functionType.delete))
             {
                 view();

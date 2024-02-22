@@ -32,7 +32,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.partsBtn = new System.Windows.Forms.Button();
             this.carBtn = new System.Windows.Forms.Button();
             this.customerBtn = new System.Windows.Forms.Button();
             this.dashBoardBtn = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.partsBtn);
             this.panel1.Controls.Add(this.carBtn);
             this.panel1.Controls.Add(this.customerBtn);
             this.panel1.Controls.Add(this.dashBoardBtn);
@@ -92,16 +92,17 @@
             this.button4.Text = "CAR ORDERS";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // partsBtn
             // 
-            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(0, 189);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(200, 45);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "CAR PARTS";
-            this.button3.UseVisualStyleBackColor = true;
+            this.partsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.partsBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.partsBtn.Location = new System.Drawing.Point(0, 189);
+            this.partsBtn.Name = "partsBtn";
+            this.partsBtn.Size = new System.Drawing.Size(200, 45);
+            this.partsBtn.TabIndex = 5;
+            this.partsBtn.Text = "CAR PARTS";
+            this.partsBtn.UseVisualStyleBackColor = true;
+            this.partsBtn.Click += new System.EventHandler(this.partsBtn_Click);
             // 
             // carBtn
             // 
@@ -191,7 +192,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button partsBtn;
         private System.Windows.Forms.Button carBtn;
         private System.Windows.Forms.Button customerBtn;
     }
