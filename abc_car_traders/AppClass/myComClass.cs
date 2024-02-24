@@ -52,6 +52,12 @@ namespace abc_car_traders.AppClass
                 {
                     comboBox.SelectedIndex = -1;
                 }
+                else if (control is DataGridView dataGridView)
+                {
+                    dataGridView.DataSource = null;
+                    dataGridView.Rows.Clear();
+                    dataGridView.Columns.Clear();
+                }
             }
         }
     }

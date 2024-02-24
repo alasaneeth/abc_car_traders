@@ -226,6 +226,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "signUpForm";
             this.Text = "sign Up Form";
+            this.Load += new System.EventHandler(this.signUpForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

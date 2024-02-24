@@ -282,7 +282,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(657, 636);
+            this.panel1.Size = new System.Drawing.Size(696, 636);
             this.panel1.TabIndex = 21;
             // 
             // label14
@@ -501,7 +501,7 @@
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(656, 636);
+            this.ClientSize = new System.Drawing.Size(694, 636);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PartsOrderForm";

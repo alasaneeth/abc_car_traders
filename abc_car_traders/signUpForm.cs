@@ -67,5 +67,10 @@ namespace abc_car_traders
 
             } 
         }
+
+        private void signUpForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

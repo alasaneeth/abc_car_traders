@@ -41,12 +41,25 @@ namespace abc_car_traders
         }
 
        
-        private void partsOrderBtn_Click(object sender, EventArgs e)
-        {
-            formLoadInPanel(new PartsOrderForm(LoginUserId), formLoadArea);
-        }
+       
         private void formLoadArea_Paint_2(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void DashBoard_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void partsOrderDetails_Click(object sender, EventArgs e)
+        {
+            formLoadInPanel(new PartsOrderDetails(), formLoadArea);
+        }
+
+        private void partsOrderBtn_Click_1(object sender, EventArgs e)
+        {
+            formLoadInPanel(new PartsOrderForm(LoginUserId), formLoadArea);
 
         }
     }

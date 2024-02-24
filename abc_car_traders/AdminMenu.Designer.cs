@@ -39,12 +39,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.formloadArea = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.partsOrderBtn);
             this.panel1.Controls.Add(this.button4);
@@ -168,6 +170,17 @@
             this.formloadArea.TabIndex = 1;
             this.formloadArea.Paint += new System.Windows.Forms.PaintEventHandler(this.formloadArea_Paint);
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(0, 369);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 45);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "REPOTS";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // AdminMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,5 +210,6 @@
         private System.Windows.Forms.Button partsBtn;
         private System.Windows.Forms.Button carBtn;
         private System.Windows.Forms.Button customerBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

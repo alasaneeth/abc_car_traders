@@ -24,7 +24,9 @@ namespace abc_car_traders.AppClass
         public string expiryDate { get; set; }
         public int cvc { get; set; }
         public decimal paymentAmount { get; set; }
-        
+
+
+
         public DataGridView myGridView { get; set; }
         public string status = "Pending";
 

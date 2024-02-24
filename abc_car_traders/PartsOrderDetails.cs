@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace abc_car_traders
 {
-    public partial class CarOrderForm: Form
+    public partial class PartsOrderDetails : Form
     {
-        public CarOrderForm()
+        public PartsOrderDetails()
         {
             InitializeComponent();
         }

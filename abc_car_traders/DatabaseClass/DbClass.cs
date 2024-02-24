@@ -25,7 +25,7 @@ namespace abc_car_traders.MyComClass
         public SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-BQ6F8LG\SQLEXPRESS;Initial Catalog=abc_cars;Integrated Security=True");
 
         public int id;
-
+        public bool orderSaved = false;
         public void ExecuteScalar(string sql)
         {
             SqlDataAdapter data = new SqlDataAdapter(sql, con);
@@ -147,7 +147,9 @@ namespace abc_car_traders.MyComClass
             if(rowsCount > 0)
             {
                 MessageBox.Show("Create Order Successfully!");
-            }else
+                orderSaved= true;
+            }
+            else
             {
                 MessageBox.Show("Contact With your IT Departmnet");
             }
