@@ -142,6 +142,7 @@
             this.desBox.Name = "desBox";
             this.desBox.Size = new System.Drawing.Size(125, 26);
             this.desBox.TabIndex = 10;
+            this.desBox.TextChanged += new System.EventHandler(this.desBox_TextChanged);
             // 
             // label4
             // 
@@ -233,6 +234,7 @@
             this.idBox.Name = "idBox";
             this.idBox.Size = new System.Drawing.Size(45, 26);
             this.idBox.TabIndex = 18;
+            this.idBox.TextChanged += new System.EventHandler(this.idBox_TextChanged);
             // 
             // addOrderButton
             // 
@@ -463,6 +465,7 @@
             this.orderDetails.ReadOnly = true;
             this.orderDetails.Size = new System.Drawing.Size(483, 150);
             this.orderDetails.TabIndex = 21;
+            this.orderDetails.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.orderDetails_CellContentClick);
             // 
             // productId
             // 

@@ -133,6 +133,20 @@ namespace abc_car_traders.MyComClass
                 con.Close();
             }
         }
+        //Method Over Loading
+        public void partSearchFunction(string sql, DataGridView _loadtable, string carModel)
+        {
+            using (SqlDataAdapter data = new SqlDataAdapter(sql, con))
+            {
+                DataTable dt = new DataTable();
+                data.SelectCommand.Parameters.AddWithValue("@carModel", (object)carModel ?? DBNull.Value);
+
+                con.Open();
+                data.Fill(dt);
+                _loadtable.DataSource = dt;
+                con.Close();
+            }
+        }
 
         public void saveOrder(string orderQuery)
         {

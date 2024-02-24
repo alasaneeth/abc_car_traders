@@ -1,4 +1,5 @@
-﻿using System;
+﻿using abc_car_traders.AppClass;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -61,6 +62,17 @@ namespace abc_car_traders
         {
             formLoadInPanel(new PartsOrderForm(LoginUserId), formLoadArea);
 
+        }
+
+        private void CarOrder_Click(object sender, EventArgs e)
+        {
+            formLoadInPanel(new CarOrderForm(LoginUserId), formLoadArea);
+
+        }
+
+        private void CarOrderDetails_Click(object sender, EventArgs e)
+        {
+            formLoadInPanel(new CarOrderDetailsForm(LoginUserId), formLoadArea);
         }
     }
 }

@@ -37,8 +37,8 @@
             this.Dashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.formLoadArea = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -90,16 +90,17 @@
             this.partsOrderBtn.UseVisualStyleBackColor = true;
             this.partsOrderBtn.Click += new System.EventHandler(this.partsOrderBtn_Click_1);
             // 
-            // CarOrderDetails
+            // CarOrderDetailsForm
             // 
             this.CarOrderDetails.Dock = System.Windows.Forms.DockStyle.Top;
             this.CarOrderDetails.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CarOrderDetails.Location = new System.Drawing.Point(0, 148);
-            this.CarOrderDetails.Name = "CarOrderDetails";
+            this.CarOrderDetails.Name = "CarOrderDetailsForm";
             this.CarOrderDetails.Size = new System.Drawing.Size(198, 42);
             this.CarOrderDetails.TabIndex = 4;
             this.CarOrderDetails.Text = "CAR ORDER DETAILS";
             this.CarOrderDetails.UseVisualStyleBackColor = true;
+            this.CarOrderDetails.Click += new System.EventHandler(this.CarOrderDetails_Click);
             // 
             // CarOrder
             // 
@@ -111,6 +112,7 @@
             this.CarOrder.TabIndex = 3;
             this.CarOrder.Text = "CAR ORDER";
             this.CarOrder.UseVisualStyleBackColor = true;
+            this.CarOrder.Click += new System.EventHandler(this.CarOrder_Click);
             // 
             // Dashboard
             // 
@@ -138,24 +140,24 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(198, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(681, 678);
+            this.panel3.Size = new System.Drawing.Size(710, 678);
             this.panel3.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(681, 52);
-            this.panel4.TabIndex = 0;
             // 
             // formLoadArea
             // 
             this.formLoadArea.Dock = System.Windows.Forms.DockStyle.Top;
             this.formLoadArea.Location = new System.Drawing.Point(0, 52);
             this.formLoadArea.Name = "formLoadArea";
-            this.formLoadArea.Size = new System.Drawing.Size(681, 626);
+            this.formLoadArea.Size = new System.Drawing.Size(710, 626);
             this.formLoadArea.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(710, 52);
+            this.panel4.TabIndex = 0;
             // 
             // CustomerMenu
             // 
@@ -163,7 +165,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(879, 678);
+            this.ClientSize = new System.Drawing.Size(908, 678);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);

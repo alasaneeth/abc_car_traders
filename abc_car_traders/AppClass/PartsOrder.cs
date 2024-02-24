@@ -44,7 +44,7 @@ namespace abc_car_traders.AppClass
         {
             string orderQuery = "insert into parts_order (customerId,totalAmount,status,date) values ('" + userId + "','"+ lastTotal + "','"+status+"', GETDATE())";
             saveOrder(orderQuery);
-            string paymentQuery = "insert into payment (orderId,orderType,cardHolder,cardNo,expiryDate,cvc,amount,paymentDate)  values ('"+id+"','partsOrder','"+ cardHolder + "','"+ cardNo + "', '"+ expiryDate + "','"+cvc+"','"+paymentAmount+"', GETDATE())";
+            string paymentQuery = "insert into payment (orderId,cardHolder,cardNo,expiryDate,cvc,amount,paymentDate)  values ('"+id+"','"+ cardHolder + "','"+ cardNo + "', '"+ expiryDate + "','" +cvc+ "','"+paymentAmount+"', GETDATE())";
             executeorderQuery(paymentQuery);
             OrderDetails();
         }

@@ -78,7 +78,7 @@ namespace abc_car_traders
         {
              lineTotal = price * quantity;
           
-            totalBox.Text = lineTotal.ToString("N", CultureInfo.InvariantCulture);// display as coma sepearator
+            totalBox.Text = lineTotal.ToString();
 
         }
 
@@ -173,9 +173,9 @@ namespace abc_car_traders
 
         private void cvcBox_TextChanged(object sender, EventArgs e)
         {
-            if (int.TryParse(cvcBox.Text, out int price))
+            if (int.TryParse(cvcBox.Text, out int cvc))
             {
-                parts.price = price;
+                parts.cvc = cvc;
             }
         }
 
@@ -201,6 +201,21 @@ namespace abc_car_traders
         private bool IsNotValidComplete()
         {
             return comClass.CheckValidateFields( EXPBox, holderBox, cardNoBox, cvcBox, paymentAmount);
+        }
+
+        private void idBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void desBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void orderDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
