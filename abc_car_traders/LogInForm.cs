@@ -1,4 +1,5 @@
-﻿using abc_car_traders.LoginClass;
+﻿using abc_car_traders.AppClass;
+using abc_car_traders.LoginClass;
 using abc_car_traders.MyComClass;
 using System;
 using System.Collections.Generic;
@@ -24,12 +25,20 @@ namespace abc_car_traders
 
         private void logInBtn_Click(object sender, EventArgs e)
         {
-            user.login();
-
-            if (user.loginStatus == true)
+            if(usernameBox.Text == "" ||  passwordBox.Text == "")
             {
-                this.Hide();
+                MessageBox.Show(" Invalid Username or password!");
+            } else
+            {
+                user.login();
+
+                if (user.loginStatus == true)
+                {
+                    this.Hide();
+                }
             }
+            
+           
         }
 
         private void usernameBox_TextChanged(object sender, EventArgs e)
