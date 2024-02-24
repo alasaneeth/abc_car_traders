@@ -32,26 +32,28 @@ namespace abc_car_traders.LoginClass
 
            User authernicateduser = AuthenticateUser(UserName, Password, sql);
 
-            UserId = authernicateduser.UserId;
+           
 
             
 
-            if (authernicateduser.UserRole != null)
+            if (authernicateduser != null)
             {
                 if (authernicateduser.UserRole == "admin")
                 {
+                      UserId = authernicateduser.UserId;
                     new AdminMenu().Show();
                     loginStatus = true;
                 }
                 else if (authernicateduser.UserRole == "customer")
                 {
+                    UserId = authernicateduser.UserId;
                     new CustomerMenu(UserId).Show();
                     loginStatus = true;
                 }
-                else
-                {
-                    MessageBox.Show("Invalid username or password");
-                }
+              
+            }else
+            {
+                MessageBox.Show(" Invalid Username or password!");
             }
 
 

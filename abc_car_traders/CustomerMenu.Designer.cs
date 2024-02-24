@@ -39,8 +39,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.formLoadArea = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -90,12 +92,12 @@
             this.partsOrderBtn.UseVisualStyleBackColor = true;
             this.partsOrderBtn.Click += new System.EventHandler(this.partsOrderBtn_Click_1);
             // 
-            // CarOrderDetailsForm
+            // CarOrderDetails
             // 
             this.CarOrderDetails.Dock = System.Windows.Forms.DockStyle.Top;
             this.CarOrderDetails.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CarOrderDetails.Location = new System.Drawing.Point(0, 148);
-            this.CarOrderDetails.Name = "CarOrderDetailsForm";
+            this.CarOrderDetails.Name = "CarOrderDetails";
             this.CarOrderDetails.Size = new System.Drawing.Size(198, 42);
             this.CarOrderDetails.TabIndex = 4;
             this.CarOrderDetails.Text = "CAR ORDER DETAILS";
@@ -153,11 +155,23 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.logoutBtn);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(710, 52);
             this.panel4.TabIndex = 0;
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.Location = new System.Drawing.Point(577, 12);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(102, 33);
+            this.logoutBtn.TabIndex = 0;
+            this.logoutBtn.Text = "Log out";
+            this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // CustomerMenu
             // 
@@ -170,11 +184,12 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CustomerMenu";
             this.Text = "CustomerMenu";
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,5 +208,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel formLoadArea;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button logoutBtn;
     }
 }

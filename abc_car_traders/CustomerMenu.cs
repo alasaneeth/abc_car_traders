@@ -74,5 +74,13 @@ namespace abc_car_traders
         {
             formLoadInPanel(new CarOrderDetailsForm(LoginUserId), formLoadArea);
         }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            LogInForm loginForm = new LogInForm();
+            loginForm.Show();
+            this.Close(); 
+
+        }
     }
 }
