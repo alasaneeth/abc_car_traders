@@ -18,6 +18,7 @@ namespace abc_car_traders
         decimal price;
         decimal lastTotal;
         int LoginUserId;
+        decimal lineTotal;
         PartsOrder parts = new PartsOrder();
         public PartsOrderForm()
         {
@@ -34,11 +35,6 @@ namespace abc_car_traders
         private void modelBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             parts.carModel = modelBox.Text;
-        }
-
-        private void partNameBox_TextChanged(object sender, EventArgs e)
-        {
-            parts.partName = partsNameCombo.Text;
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -71,26 +67,27 @@ namespace abc_car_traders
 
         private void UpdateTotal()
         {
-            decimal total = price * quantity;
-            lblNetTotal.Text += total;
-            totalBox.Text = total.ToString("N", CultureInfo.InvariantCulture);// display as coma sepearator
+             lineTotal = price * quantity;
+          
+            totalBox.Text = lineTotal.ToString("N", CultureInfo.InvariantCulture);// display as coma sepearator
 
         }
+
 
         private void totalBox_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        public void loadPartsNameByCombo()
-        {
-            string sql = "select id, name from car_parts; ";
-            parts.loadCombo(sql, partsNameCombo, "name", "id");
-        }
+       
 
         private void addOrderButton_Click(object sender, EventArgs e)
         {
-            orderDetails.Rows.Add(desBox.Text, qtyBox.Text, unitPriceBox.Text, totalBox.Text);
+            orderDetails.Rows.Add(idBox.Text, desBox.Text, qtyBox.Text, unitPriceBox.Text, totalBox.Text);
+            lastTotal += lineTotal;
+            parts.lastTotal = lastTotal;
+            lblNetTotal.Text = lastTotal.ToString("N", CultureInfo.InvariantCulture);
+
         }
 
         private void completeBtn_Click(object sender, EventArgs e)
@@ -99,21 +96,49 @@ namespace abc_car_traders
             parts.complete();
         }
 
-        private void lblNetTotal_Click(object sender, EventArgs e)
-        {
-            parts.lastTotal = Convert.ToDecimal(lblNetTotal.Text);
-        }
+ 
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void PartsOrderForm_Load(object sender, EventArgs e)
+    
+
+        private void nameBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadPartsNameByCombo();
+            parts.partName = nameBox.Text;
         }
 
-     
+        private void paymentBtn_Click(object sender, EventArgs e)
+        {
+            new PaymentForm().Show();
+        }
+
+        private void EXPBox_TextChanged(object sender, EventArgs e)
+        {
+            _ = EXPBox.Text == "MM/YY" ? EXPBox.ForeColor = Color.Silver : EXPBox.ForeColor = Color.Black;
+            parts.expiryDate = EXPBox.Text;
+        }
+
+        private void holderBox_TextChanged(object sender, EventArgs e)
+        {
+            parts.cardHolder = holderBox.Text;
+        }
+
+        private void cardNoBox_TextChanged(object sender, EventArgs e)
+        {
+            parts.cardNo = cardNoBox.Text;
+        }
+
+        private void cvcBox_TextChanged(object sender, EventArgs e)
+        {
+            parts.cvc = Convert.ToInt16(cvcBox.Text);
+        }
+
+        private void paymentAmount_TextChanged(object sender, EventArgs e)
+        {
+            parts.paymentAmount = Convert.ToDecimal(paymentAmount.Text);
+        }
     }
 }

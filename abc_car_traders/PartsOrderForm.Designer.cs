@@ -45,14 +45,27 @@
             this.idBox = new System.Windows.Forms.TextBox();
             this.addOrderButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.paymentAmount = new System.Windows.Forms.TextBox();
+            this.cvcBox = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.EXPBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.cardNoBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.holderBox = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nameBox = new System.Windows.Forms.ComboBox();
             this.lblNetTotal = new System.Windows.Forms.Label();
             this.completeBtn = new System.Windows.Forms.Button();
             this.orderDetails = new System.Windows.Forms.DataGridView();
+            this.productId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.partsNameCombo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.loadDataTable)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.orderDetails)).BeginInit();
@@ -228,13 +241,25 @@
             this.addOrderButton.Name = "addOrderButton";
             this.addOrderButton.Size = new System.Drawing.Size(107, 36);
             this.addOrderButton.TabIndex = 20;
-            this.addOrderButton.Text = "Add Order";
+            this.addOrderButton.Text = "Add";
             this.addOrderButton.UseVisualStyleBackColor = true;
             this.addOrderButton.Click += new System.EventHandler(this.addOrderButton_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.partsNameCombo);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.paymentAmount);
+            this.panel1.Controls.Add(this.cvcBox);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.EXPBox);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.cardNoBox);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.holderBox);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.nameBox);
             this.panel1.Controls.Add(this.lblNetTotal);
             this.panel1.Controls.Add(this.completeBtn);
             this.panel1.Controls.Add(this.orderDetails);
@@ -257,25 +282,163 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(696, 480);
+            this.panel1.Size = new System.Drawing.Size(657, 636);
             this.panel1.TabIndex = 21;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(373, 507);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 18);
+            this.label14.TabIndex = 34;
+            this.label14.Text = "Amount";
+            // 
+            // paymentAmount
+            // 
+            this.paymentAmount.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paymentAmount.Location = new System.Drawing.Point(449, 504);
+            this.paymentAmount.Name = "paymentAmount";
+            this.paymentAmount.Size = new System.Drawing.Size(188, 26);
+            this.paymentAmount.TabIndex = 32;
+            this.paymentAmount.TextChanged += new System.EventHandler(this.paymentAmount_TextChanged);
+            // 
+            // cvcBox
+            // 
+            this.cvcBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cvcBox.Location = new System.Drawing.Point(285, 502);
+            this.cvcBox.Name = "cvcBox";
+            this.cvcBox.Size = new System.Drawing.Size(69, 26);
+            this.cvcBox.TabIndex = 32;
+            this.cvcBox.TextChanged += new System.EventHandler(this.cvcBox_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(236, 505);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 18);
+            this.label13.TabIndex = 33;
+            this.label13.Text = "CVC";
+            // 
+            // EXPBox
+            // 
+            this.EXPBox.BackColor = System.Drawing.Color.White;
+            this.EXPBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EXPBox.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.EXPBox.Location = new System.Drawing.Point(118, 499);
+            this.EXPBox.Name = "EXPBox";
+            this.EXPBox.Size = new System.Drawing.Size(97, 26);
+            this.EXPBox.TabIndex = 32;
+            this.EXPBox.Text = "MM/YY";
+            this.EXPBox.TextChanged += new System.EventHandler(this.EXPBox_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(30, 502);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(82, 18);
+            this.label12.TabIndex = 33;
+            this.label12.Text = "EXP Date";
+            // 
+            // cardNoBox
+            // 
+            this.cardNoBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cardNoBox.Location = new System.Drawing.Point(449, 450);
+            this.cardNoBox.Name = "cardNoBox";
+            this.cardNoBox.Size = new System.Drawing.Size(188, 26);
+            this.cardNoBox.TabIndex = 30;
+            this.cardNoBox.TextChanged += new System.EventHandler(this.cardNoBox_TextChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(338, 450);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(78, 18);
+            this.label11.TabIndex = 31;
+            this.label11.Text = "Card No:";
+            // 
+            // holderBox
+            // 
+            this.holderBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.holderBox.Location = new System.Drawing.Point(141, 450);
+            this.holderBox.Name = "holderBox";
+            this.holderBox.Size = new System.Drawing.Size(188, 26);
+            this.holderBox.TabIndex = 28;
+            this.holderBox.TextChanged += new System.EventHandler(this.holderBox_TextChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(30, 450);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(104, 18);
+            this.label10.TabIndex = 29;
+            this.label10.Text = "Card Holder";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(39, 415);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(137, 18);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Payment Details";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(532, 279);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(108, 18);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Order Total :";
+            // 
+            // nameBox
+            // 
+            this.nameBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameBox.FormattingEnabled = true;
+            this.nameBox.Items.AddRange(new object[] {
+            "Oil Filter",
+            "Brake Pads",
+            "Spark Plugs"});
+            this.nameBox.Location = new System.Drawing.Point(368, 16);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(176, 26);
+            this.nameBox.TabIndex = 24;
+            this.nameBox.SelectedIndexChanged += new System.EventHandler(this.nameBox_SelectedIndexChanged);
             // 
             // lblNetTotal
             // 
             this.lblNetTotal.AutoSize = true;
             this.lblNetTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNetTotal.ForeColor = System.Drawing.Color.Black;
-            this.lblNetTotal.Location = new System.Drawing.Point(157, 432);
+            this.lblNetTotal.Location = new System.Drawing.Point(532, 306);
             this.lblNetTotal.Name = "lblNetTotal";
-            this.lblNetTotal.Size = new System.Drawing.Size(93, 18);
+            this.lblNetTotal.Size = new System.Drawing.Size(43, 18);
             this.lblNetTotal.TabIndex = 23;
-            this.lblNetTotal.Text = "Car Model:";
-            this.lblNetTotal.Click += new System.EventHandler(this.lblNetTotal_Click);
+            this.lblNetTotal.Text = "0.00";
             // 
             // completeBtn
             // 
             this.completeBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.completeBtn.Location = new System.Drawing.Point(549, 365);
+            this.completeBtn.Location = new System.Drawing.Point(491, 555);
             this.completeBtn.Name = "completeBtn";
             this.completeBtn.Size = new System.Drawing.Size(107, 36);
             this.completeBtn.TabIndex = 22;
@@ -290,6 +453,7 @@
             this.orderDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.orderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.orderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.productId,
             this.description,
             this.qty,
             this.UnitPrice,
@@ -299,6 +463,12 @@
             this.orderDetails.ReadOnly = true;
             this.orderDetails.Size = new System.Drawing.Size(483, 150);
             this.orderDetails.TabIndex = 21;
+            // 
+            // productId
+            // 
+            this.productId.HeaderText = "Id";
+            this.productId.Name = "productId";
+            this.productId.ReadOnly = true;
             // 
             // description
             // 
@@ -324,17 +494,6 @@
             this.total.Name = "total";
             this.total.ReadOnly = true;
             // 
-            // partsNameCombo
-            // 
-            this.partsNameCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.partsNameCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.partsNameCombo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partsNameCombo.FormattingEnabled = true;
-            this.partsNameCombo.Location = new System.Drawing.Point(377, 16);
-            this.partsNameCombo.Name = "partsNameCombo";
-            this.partsNameCombo.Size = new System.Drawing.Size(166, 26);
-            this.partsNameCombo.TabIndex = 24;
-            // 
             // PartsOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,7 +501,7 @@
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(695, 480);
+            this.ClientSize = new System.Drawing.Size(656, 636);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PartsOrderForm";
@@ -377,10 +536,23 @@
         private System.Windows.Forms.DataGridView orderDetails;
         private System.Windows.Forms.Button completeBtn;
         private System.Windows.Forms.Label lblNetTotal;
+        private System.Windows.Forms.ComboBox nameBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn productId;
         private System.Windows.Forms.DataGridViewTextBoxColumn description;
         private System.Windows.Forms.DataGridViewTextBoxColumn qty;
         private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn total;
-        private System.Windows.Forms.ComboBox partsNameCombo;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox paymentAmount;
+        private System.Windows.Forms.TextBox cvcBox;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox EXPBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox cardNoBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox holderBox;
+        private System.Windows.Forms.Label label10;
     }
 }

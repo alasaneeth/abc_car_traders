@@ -139,16 +139,23 @@ namespace abc_car_traders.MyComClass
             con.Open();
 
             SqlCommand cmd = new SqlCommand(orderQuery, con);
-            cmd.ExecuteNonQuery();
+           int rowsCount =  cmd.ExecuteNonQuery();
 
             cmd = new SqlCommand("SELECT SCOPE_IDENTITY()", con);
             id = Convert.ToInt32(cmd.ExecuteScalar());
 
+            if(rowsCount > 0)
+            {
+                MessageBox.Show("Create Order Successfully!");
+            }else
+            {
+                MessageBox.Show("Contact With your IT Departmnet");
+            }
 
             con.Close();
         }
 
-        public void saveOrderDetails(string sql)
+        public void executeorderQuery(string sql)
         {
             con.Open();
             SqlCommand cmd = new SqlCommand(sql, con);

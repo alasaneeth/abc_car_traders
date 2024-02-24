@@ -35,25 +35,25 @@
             this.label5 = new System.Windows.Forms.Label();
             this.priceBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.nameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.deletBtn = new System.Windows.Forms.Button();
             this.updateBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.loadDataTable = new System.Windows.Forms.DataGridView();
+            this.nameBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadDataTable)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.nameBox);
             this.groupBox1.Controls.Add(this.modelBox);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.qtyBox);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.priceBox);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.nameBox);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
@@ -127,14 +127,6 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Price:";
             // 
-            // nameBox
-            // 
-            this.nameBox.Location = new System.Drawing.Point(169, 37);
-            this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(370, 26);
-            this.nameBox.TabIndex = 1;
-            this.nameBox.TextChanged += new System.EventHandler(this.nameBox_TextChanged);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -195,6 +187,19 @@
             this.loadDataTable.TabIndex = 5;
             this.loadDataTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loadDataTable_CellContentClick);
             // 
+            // nameBox
+            // 
+            this.nameBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameBox.FormattingEnabled = true;
+            this.nameBox.Items.AddRange(new object[] {
+            "Oil Filter",
+            "Brake Pads",
+            "Spark Plugs"});
+            this.nameBox.Location = new System.Drawing.Point(169, 37);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(370, 26);
+            this.nameBox.TabIndex = 16;
+            // 
             // Parts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,7 +226,6 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox qtyBox;
         private System.Windows.Forms.Label label5;
@@ -233,5 +237,6 @@
         private System.Windows.Forms.DataGridView loadDataTable;
         private System.Windows.Forms.ComboBox modelBox;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox nameBox;
     }
 }
