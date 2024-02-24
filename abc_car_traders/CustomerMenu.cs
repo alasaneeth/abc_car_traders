@@ -55,7 +55,7 @@ namespace abc_car_traders
 
         private void partsOrderDetails_Click(object sender, EventArgs e)
         {
-            formLoadInPanel(new PartsOrderDetails(), formLoadArea);
+            formLoadInPanel(new partsOrderDetailForm(LoginUserId), formLoadArea);
         }
 
         private void partsOrderBtn_Click_1(object sender, EventArgs e)

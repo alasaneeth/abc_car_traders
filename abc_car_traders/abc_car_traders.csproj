@@ -55,6 +55,7 @@
     <Compile Include="AppClass\Car.cs" />
     <Compile Include="AppClass\CarOrder.cs" />
     <Compile Include="AppClass\CarOrderDetails.cs" />
+    <Compile Include="AppClass\CarPartsOrderDetails.cs" />
     <Compile Include="AppClass\CatParts.cs" />
     <Compile Include="AppClass\MyComClass.cs" />
     <Compile Include="AppClass\PartsOrder.cs" />
@@ -109,11 +110,11 @@
     <Compile Include="Parts.Designer.cs">
       <DependentUpon>Parts.cs</DependentUpon>
     </Compile>
-    <Compile Include="PartsOrderDetails.cs">
+    <Compile Include="partsOrderDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PartsOrderDetails.Designer.cs">
-      <DependentUpon>PartsOrderDetails.cs</DependentUpon>
+    <Compile Include="partsOrderDetailForm.Designer.cs">
+      <DependentUpon>partsOrderDetailForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PartsOrderForm.cs">
       <SubType>Form</SubType>
@@ -167,6 +168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Parts.resx">
       <DependentUpon>Parts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="partsOrderDetailForm.resx">
+      <DependentUpon>partsOrderDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PartsOrderForm.resx">
       <DependentUpon>PartsOrderForm.cs</DependentUpon>
