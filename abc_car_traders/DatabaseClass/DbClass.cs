@@ -19,11 +19,12 @@ namespace abc_car_traders.MyComClass
         view
        
     }
+    
     internal class DbClass
     {
         public SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-BQ6F8LG\SQLEXPRESS;Initial Catalog=abc_cars;Integrated Security=True");
 
-      
+        public int id;
 
         public void ExecuteScalar(string sql)
         {
@@ -132,6 +133,30 @@ namespace abc_car_traders.MyComClass
                 con.Close();
             }
         }
+
+        public void saveOrder(string orderQuery)
+        {
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand(orderQuery, con);
+            cmd.ExecuteNonQuery();
+
+            cmd = new SqlCommand("SELECT SCOPE_IDENTITY()", con);
+            id = Convert.ToInt32(cmd.ExecuteScalar());
+
+
+            con.Close();
+        }
+
+        public void saveOrderDetails(string sql)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+
 
         public void loadCombo(string sql,ComboBox comboBox, string displayMember, string valueMember)
         {

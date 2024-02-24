@@ -33,5 +33,16 @@ namespace abc_car_traders
         {
             com.formLoadInPanel(new Parts(), formloadArea);
         }
+
+        private void partsOrderBtn_Click(object sender, EventArgs e)
+        {
+            com.formLoadInPanel(new PartsOrderForm(), formloadArea);
+
+        }
+
+        private void formloadArea_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

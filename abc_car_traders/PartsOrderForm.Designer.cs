@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.partNameBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.searchBtn = new System.Windows.Forms.Button();
             this.loadDataTable = new System.Windows.Forms.DataGridView();
@@ -46,8 +45,17 @@
             this.idBox = new System.Windows.Forms.TextBox();
             this.addOrderButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNetTotal = new System.Windows.Forms.Label();
+            this.completeBtn = new System.Windows.Forms.Button();
+            this.orderDetails = new System.Windows.Forms.DataGridView();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.partsNameCombo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.loadDataTable)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,15 +68,6 @@
             this.label1.Size = new System.Drawing.Size(93, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Car Model:";
-            // 
-            // partNameBox
-            // 
-            this.partNameBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.partNameBox.Location = new System.Drawing.Point(377, 15);
-            this.partNameBox.Name = "partNameBox";
-            this.partNameBox.Size = new System.Drawing.Size(157, 26);
-            this.partNameBox.TabIndex = 3;
-            this.partNameBox.TextChanged += new System.EventHandler(this.partNameBox_TextChanged);
             // 
             // label2
             // 
@@ -201,6 +200,7 @@
             this.totalBox.ReadOnly = true;
             this.totalBox.Size = new System.Drawing.Size(125, 26);
             this.totalBox.TabIndex = 16;
+            this.totalBox.TextChanged += new System.EventHandler(this.totalBox_TextChanged);
             // 
             // label8
             // 
@@ -230,14 +230,18 @@
             this.addOrderButton.TabIndex = 20;
             this.addOrderButton.Text = "Add Order";
             this.addOrderButton.UseVisualStyleBackColor = true;
+            this.addOrderButton.Click += new System.EventHandler(this.addOrderButton_Click);
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.partsNameCombo);
+            this.panel1.Controls.Add(this.lblNetTotal);
+            this.panel1.Controls.Add(this.completeBtn);
+            this.panel1.Controls.Add(this.orderDetails);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.addOrderButton);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.partNameBox);
             this.panel1.Controls.Add(this.idBox);
             this.panel1.Controls.Add(this.searchBtn);
             this.panel1.Controls.Add(this.label7);
@@ -253,22 +257,100 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(696, 278);
+            this.panel1.Size = new System.Drawing.Size(696, 480);
             this.panel1.TabIndex = 21;
+            // 
+            // lblNetTotal
+            // 
+            this.lblNetTotal.AutoSize = true;
+            this.lblNetTotal.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNetTotal.ForeColor = System.Drawing.Color.Black;
+            this.lblNetTotal.Location = new System.Drawing.Point(157, 432);
+            this.lblNetTotal.Name = "lblNetTotal";
+            this.lblNetTotal.Size = new System.Drawing.Size(93, 18);
+            this.lblNetTotal.TabIndex = 23;
+            this.lblNetTotal.Text = "Car Model:";
+            this.lblNetTotal.Click += new System.EventHandler(this.lblNetTotal_Click);
+            // 
+            // completeBtn
+            // 
+            this.completeBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.completeBtn.Location = new System.Drawing.Point(549, 365);
+            this.completeBtn.Name = "completeBtn";
+            this.completeBtn.Size = new System.Drawing.Size(107, 36);
+            this.completeBtn.TabIndex = 22;
+            this.completeBtn.Text = "Complete";
+            this.completeBtn.UseVisualStyleBackColor = true;
+            this.completeBtn.Click += new System.EventHandler(this.completeBtn_Click);
+            // 
+            // orderDetails
+            // 
+            this.orderDetails.AllowUserToAddRows = false;
+            this.orderDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.orderDetails.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.orderDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.orderDetails.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.description,
+            this.qty,
+            this.UnitPrice,
+            this.total});
+            this.orderDetails.Location = new System.Drawing.Point(42, 251);
+            this.orderDetails.Name = "orderDetails";
+            this.orderDetails.ReadOnly = true;
+            this.orderDetails.Size = new System.Drawing.Size(483, 150);
+            this.orderDetails.TabIndex = 21;
+            // 
+            // description
+            // 
+            this.description.HeaderText = "Description";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            // 
+            // qty
+            // 
+            this.qty.HeaderText = "Qty";
+            this.qty.Name = "qty";
+            this.qty.ReadOnly = true;
+            // 
+            // UnitPrice
+            // 
+            this.UnitPrice.HeaderText = "Unit Price";
+            this.UnitPrice.Name = "UnitPrice";
+            this.UnitPrice.ReadOnly = true;
+            // 
+            // total
+            // 
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            this.total.ReadOnly = true;
+            // 
+            // partsNameCombo
+            // 
+            this.partsNameCombo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.partsNameCombo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.partsNameCombo.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.partsNameCombo.FormattingEnabled = true;
+            this.partsNameCombo.Location = new System.Drawing.Point(377, 16);
+            this.partsNameCombo.Name = "partsNameCombo";
+            this.partsNameCombo.Size = new System.Drawing.Size(166, 26);
+            this.partsNameCombo.TabIndex = 24;
             // 
             // PartsOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(695, 278);
+            this.ClientSize = new System.Drawing.Size(695, 480);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PartsOrderForm";
             this.Text = "PartsOrderForm";
             ((System.ComponentModel.ISupportInitialize)(this.loadDataTable)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.orderDetails)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -276,7 +358,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox partNameBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.DataGridView loadDataTable;
@@ -293,5 +374,13 @@
         private System.Windows.Forms.TextBox idBox;
         private System.Windows.Forms.Button addOrderButton;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView orderDetails;
+        private System.Windows.Forms.Button completeBtn;
+        private System.Windows.Forms.Label lblNetTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.ComboBox partsNameCombo;
     }
 }

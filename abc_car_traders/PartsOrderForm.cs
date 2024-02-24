@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,11 +16,13 @@ namespace abc_car_traders
     {
         int quantity;
         decimal price;
+        decimal lastTotal;
         int LoginUserId;
         PartsOrder parts = new PartsOrder();
         public PartsOrderForm()
         {
             InitializeComponent();
+            parts.orderDetailGrid = orderDetails;
 
         }
         public PartsOrderForm(int loginUserId)
@@ -35,7 +38,7 @@ namespace abc_car_traders
 
         private void partNameBox_TextChanged(object sender, EventArgs e)
         {
-            parts.partName = partNameBox.Text;
+            parts.partName = partsNameCombo.Text;
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -69,9 +72,48 @@ namespace abc_car_traders
         private void UpdateTotal()
         {
             decimal total = price * quantity;
-            totalBox.Text = total.ToString();
-         
-        }   
-        
+            lblNetTotal.Text += total;
+            totalBox.Text = total.ToString("N", CultureInfo.InvariantCulture);// display as coma sepearator
+
+        }
+
+        private void totalBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public void loadPartsNameByCombo()
+        {
+            string sql = "select id, name from car_parts; ";
+            parts.loadCombo(sql, partsNameCombo, "name", "id");
+        }
+
+        private void addOrderButton_Click(object sender, EventArgs e)
+        {
+            orderDetails.Rows.Add(desBox.Text, qtyBox.Text, unitPriceBox.Text, totalBox.Text);
+        }
+
+        private void completeBtn_Click(object sender, EventArgs e)
+        {
+            parts.orderDetailGrid = orderDetails;
+            parts.complete();
+        }
+
+        private void lblNetTotal_Click(object sender, EventArgs e)
+        {
+            parts.lastTotal = Convert.ToDecimal(lblNetTotal.Text);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PartsOrderForm_Load(object sender, EventArgs e)
+        {
+            loadPartsNameByCombo();
+        }
+
+     
     }
 }

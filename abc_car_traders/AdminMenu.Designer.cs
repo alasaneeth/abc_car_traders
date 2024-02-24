@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.partsOrderBtn = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.partsBtn = new System.Windows.Forms.Button();
             this.carBtn = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.partsOrderBtn);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.partsBtn);
             this.panel1.Controls.Add(this.carBtn);
@@ -70,16 +70,17 @@
             this.button6.Text = "REPOTS";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // partsOrderBtn
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(0, 279);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(200, 45);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "PARTS ODERS";
-            this.button5.UseVisualStyleBackColor = true;
+            this.partsOrderBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.partsOrderBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.partsOrderBtn.Location = new System.Drawing.Point(0, 279);
+            this.partsOrderBtn.Name = "partsOrderBtn";
+            this.partsOrderBtn.Size = new System.Drawing.Size(200, 45);
+            this.partsOrderBtn.TabIndex = 7;
+            this.partsOrderBtn.Text = "PARTS ODERS";
+            this.partsOrderBtn.UseVisualStyleBackColor = true;
+            this.partsOrderBtn.Click += new System.EventHandler(this.partsOrderBtn_Click);
             // 
             // button4
             // 
@@ -165,6 +166,7 @@
             this.formloadArea.Name = "formloadArea";
             this.formloadArea.Size = new System.Drawing.Size(701, 447);
             this.formloadArea.TabIndex = 1;
+            this.formloadArea.Paint += new System.Windows.Forms.PaintEventHandler(this.formloadArea_Paint);
             // 
             // AdminMenu
             // 
@@ -190,7 +192,7 @@
         private System.Windows.Forms.Panel formloadArea;
         private System.Windows.Forms.Button dashBoardBtn;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button partsOrderBtn;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button partsBtn;
         private System.Windows.Forms.Button carBtn;
