@@ -25,15 +25,7 @@ namespace abc_car_traders
         }
 
 
-        private void formLoadArea_Paint(object sender, PaintEventArgs e)
-        {
-           
-        }
-
-        private void CustomerMenu_Load(object sender, EventArgs e)
-        {
-         
-        }
+      
 
 
 
@@ -48,19 +40,11 @@ namespace abc_car_traders
             form.Show();
         }
 
-        
-
-        private void formLoadArea_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
+       
         private void partsOrderBtn_Click(object sender, EventArgs e)
         {
             formLoadInPanel(new PartsOrderForm(LoginUserId), formLoadArea);
         }
-
         private void formLoadArea_Paint_2(object sender, PaintEventArgs e)
         {
 
