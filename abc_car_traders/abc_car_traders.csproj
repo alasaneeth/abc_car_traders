@@ -54,7 +54,9 @@
     </Compile>
     <Compile Include="AppClass\Car.cs" />
     <Compile Include="AppClass\CarOrder.cs" />
+    <Compile Include="AppClass\CarOrderDetailForAdmin.cs" />
     <Compile Include="AppClass\CarOrderDetails.cs" />
+    <Compile Include="AppClass\CarPartsOrderDetailForAdmin.cs" />
     <Compile Include="AppClass\CarPartsOrderDetails.cs" />
     <Compile Include="AppClass\CatParts.cs" />
     <Compile Include="AppClass\MyComClass.cs" />
@@ -64,6 +66,12 @@
     </Compile>
     <Compile Include="CarForm.Designer.cs">
       <DependentUpon>CarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarOrderDetailFormForAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarOrderDetailFormForAdmin.Designer.cs">
+      <DependentUpon>CarOrderDetailFormForAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="CarOrderDetailForm.cs">
       <SubType>Form</SubType>
@@ -76,6 +84,12 @@
     </Compile>
     <Compile Include="CarOrderForm.Designer.cs">
       <DependentUpon>CarOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarPrtsOrderDetaiFormForAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarPrtsOrderDetaiFormForAdmin.Designer.cs">
+      <DependentUpon>CarPrtsOrderDetaiFormForAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerDetailsForm.cs">
       <SubType>Form</SubType>
@@ -148,11 +162,17 @@
     <EmbeddedResource Include="CarForm.resx">
       <DependentUpon>CarForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CarOrderDetailFormForAdmin.resx">
+      <DependentUpon>CarOrderDetailFormForAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CarOrderDetailForm.resx">
       <DependentUpon>CarOrderDetailForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CarOrderForm.resx">
       <DependentUpon>CarOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarPrtsOrderDetaiFormForAdmin.resx">
+      <DependentUpon>CarPrtsOrderDetaiFormForAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerDetailsForm.resx">
       <DependentUpon>CustomerDetailsForm.cs</DependentUpon>
@@ -186,6 +206,7 @@
     <EmbeddedResource Include="signUpForm.resx">
       <DependentUpon>signUpForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="AppClass\PartsOrderDetailsForAdmin.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

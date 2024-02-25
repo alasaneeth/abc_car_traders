@@ -16,8 +16,9 @@ namespace abc_car_traders.MyComClass
         insert,
         update,
         delete,
-        view
-       
+        view,
+        delivery
+
     }
     
     internal class DbClass
@@ -59,6 +60,10 @@ namespace abc_car_traders.MyComClass
             {
                 functionRunStatus = true;
                 message = "Inserted Successfully";
+            } else if (_functionType == functionType.delivery)
+            {
+                functionRunStatus = true;
+                message = "Order Deliverd Successfully";
             }
 
             if (functionRunStatus)

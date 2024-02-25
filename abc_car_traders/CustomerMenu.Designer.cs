@@ -39,8 +39,8 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.formLoadArea = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.logoutBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -164,6 +164,17 @@
             this.panel4.Size = new System.Drawing.Size(710, 52);
             this.panel4.TabIndex = 0;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(34, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(168, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "ABC CAR TRADERS";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
             // logoutBtn
             // 
             this.logoutBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -174,16 +185,6 @@
             this.logoutBtn.Text = "Log out";
             this.logoutBtn.UseVisualStyleBackColor = true;
             this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(34, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ABC CAR TRADERS";
             // 
             // CustomerMenu
             // 

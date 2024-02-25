@@ -36,7 +36,7 @@ namespace abc_car_traders
 
         private void partsOrderBtn_Click(object sender, EventArgs e)
         {
-            com.formLoadInPanel(new PartsOrderForm(), formloadArea);
+            com.formLoadInPanel(new CarPrtsOrderDetaiFormForAdmin(), formloadArea);
 
         }
 
@@ -45,6 +45,16 @@ namespace abc_car_traders
 
         }
 
-       
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            LogInForm loginForm = new LogInForm();
+            loginForm.Show();
+            this.Close();
+        }
+
+        private void carOrderDetailBtn_Click(object sender, EventArgs e)
+        {
+            com.formLoadInPanel(new CarOrderDetailFormForAdmin(), formloadArea);
+        }
     }
 }
