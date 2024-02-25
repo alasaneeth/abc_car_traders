@@ -459,9 +459,10 @@
             this.modelBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modelBox.FormattingEnabled = true;
             this.modelBox.Items.AddRange(new object[] {
-            "Honda-vezel",
-            "Toyot-corella",
-            "Maruthi-Suzuki"});
+            "Alto",
+            "Prius",
+            "Fit",
+            "Vezel"});
             this.modelBox.Location = new System.Drawing.Point(127, 27);
             this.modelBox.Name = "modelBox";
             this.modelBox.Size = new System.Drawing.Size(206, 26);

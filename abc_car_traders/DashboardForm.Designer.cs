@@ -28,33 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.carOrderChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.partsOrderChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.carOrderChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partsOrderChart)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // carOrderChart
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(396, 167);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Dash Board";
+            chartArea3.Name = "ChartArea1";
+            this.carOrderChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.carOrderChart.Legends.Add(legend3);
+            this.carOrderChart.Location = new System.Drawing.Point(12, 22);
+            this.carOrderChart.Name = "carOrderChart";
+            series3.ChartArea = "ChartArea1";
+            series3.Legend = "Legend1";
+            series3.Name = "Series1";
+            this.carOrderChart.Series.Add(series3);
+            this.carOrderChart.Size = new System.Drawing.Size(228, 202);
+            this.carOrderChart.TabIndex = 1;
+            this.carOrderChart.Text = "chart1";
+            // 
+            // partsOrderChart
+            // 
+            chartArea4.Name = "ChartArea1";
+            this.partsOrderChart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.partsOrderChart.Legends.Add(legend4);
+            this.partsOrderChart.Location = new System.Drawing.Point(294, 22);
+            this.partsOrderChart.Name = "partsOrderChart";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.partsOrderChart.Series.Add(series4);
+            this.partsOrderChart.Size = new System.Drawing.Size(228, 202);
+            this.partsOrderChart.TabIndex = 1;
+            this.partsOrderChart.Text = "chart1";
             // 
             // DashboardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.partsOrderChart);
+            this.Controls.Add(this.carOrderChart);
             this.Name = "DashboardForm";
             this.Text = "DashboardForm";
+            this.Load += new System.EventHandler(this.DashboardForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.carOrderChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.partsOrderChart)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart carOrderChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart partsOrderChart;
     }
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace abc_car_traders.MyComClass
@@ -27,12 +28,8 @@ namespace abc_car_traders.MyComClass
 
         public int id;
         public bool orderSaved = false;
-        public void ExecuteScalar(string sql)
-        {
-            SqlDataAdapter data = new SqlDataAdapter(sql, con);
-            DataTable dt = new DataTable();
-            data.Fill(dt);
-        }
+
+     
         public bool executeQuery(string sql, functionType _functionType)
         {
             bool functionRunStatus = false;
@@ -186,15 +183,27 @@ namespace abc_car_traders.MyComClass
 
 
 
-        public void loadCombo(string sql,ComboBox comboBox, string displayMember, string valueMember)
+
+        public void loadDataInChart(string sql, Chart chart, string seriesName, string name, string quantity)
         {
-            SqlDataAdapter data = new SqlDataAdapter(sql, con);
-             DataTable dt = new DataTable();
-            data.Fill(dt);
-            comboBox.DataSource = dt;
-            comboBox.DisplayMember = displayMember;
-            comboBox.ValueMember = valueMember;
-            comboBox.SelectedIndex = -1;
+            SqlDataAdapter da = new SqlDataAdapter(sql, con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            chart.Series.Clear();
+
+            Series series = new Series(seriesName);
+            series.ChartType = SeriesChartType.Pie;
+            series.Points.DataBind(dt.DefaultView, name, quantity, null);
+            chart.Series.Add(series);
+
+            chart.ChartAreas.Clear();
+            ChartArea chartArea = new ChartArea();
+            chart.ChartAreas.Add(chartArea);
+
+            chartArea.AxisX.Title = name;
+            chartArea.AxisY.Title = seriesName;
+
         }
 
     }

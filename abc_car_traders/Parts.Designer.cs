@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nameBox = new System.Windows.Forms.ComboBox();
             this.modelBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.qtyBox = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.updateBtn = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.loadDataTable = new System.Windows.Forms.DataGridView();
-            this.nameBox = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.loadDataTable)).BeginInit();
             this.SuspendLayout();
@@ -63,6 +63,20 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Car Parts ";
+            // 
+            // nameBox
+            // 
+            this.nameBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameBox.FormattingEnabled = true;
+            this.nameBox.Items.AddRange(new object[] {
+            "Oil Filter",
+            "Brake Pads",
+            "Spark Plugs",
+            "Side Mirror"});
+            this.nameBox.Location = new System.Drawing.Point(169, 37);
+            this.nameBox.Name = "nameBox";
+            this.nameBox.Size = new System.Drawing.Size(370, 26);
+            this.nameBox.TabIndex = 16;
             // 
             // modelBox
             // 
@@ -186,19 +200,6 @@
             this.loadDataTable.Size = new System.Drawing.Size(571, 178);
             this.loadDataTable.TabIndex = 5;
             this.loadDataTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loadDataTable_CellContentClick);
-            // 
-            // nameBox
-            // 
-            this.nameBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameBox.FormattingEnabled = true;
-            this.nameBox.Items.AddRange(new object[] {
-            "Oil Filter",
-            "Brake Pads",
-            "Spark Plugs"});
-            this.nameBox.Location = new System.Drawing.Point(169, 37);
-            this.nameBox.Name = "nameBox";
-            this.nameBox.Size = new System.Drawing.Size(370, 26);
-            this.nameBox.TabIndex = 16;
             // 
             // Parts
             // 

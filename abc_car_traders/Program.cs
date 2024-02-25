@@ -16,11 +16,10 @@ namespace abc_car_traders
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-             //Application.Run(new signUpForm());
-            //Application.Run(new CarForm());
-            Application.Run(new LogInForm());
-            //Application.Run(new Parts());
-            //Application.Run(new PartsOrderForm());
+
+            //Application.Run(new LogInForm());
+            Application.Run(new DashboardForm());
+           
         }
     }
 }
