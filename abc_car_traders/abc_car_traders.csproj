@@ -164,11 +164,11 @@
     <Compile Include="PaymentForm.Designer.cs">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PeriodicOrder.cs">
+    <Compile Include="periodicOrderReport.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PeriodicOrder.Designer.cs">
-      <DependentUpon>PeriodicOrder.cs</DependentUpon>
+    <Compile Include="periodicOrderReport.Designer.cs">
+      <DependentUpon>periodicOrderReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -240,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentForm.resx">
       <DependentUpon>PaymentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="periodicOrderReport.resx">
+      <DependentUpon>periodicOrderReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

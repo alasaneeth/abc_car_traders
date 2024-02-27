@@ -40,5 +40,10 @@ namespace abc_car_traders
         {
             com.formLoadInPanel(new OrderByStatus(), reportLoadArea);
         }
+
+        private void periodicOrderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            com.formLoadInPanel(new periodicOrderReport(), reportLoadArea);
+        }
     }
 }

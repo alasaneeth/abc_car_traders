@@ -12,8 +12,16 @@ namespace abc_car_traders.AppClass
     internal class OrderReport : DbClass
     {
         public DataGridView orderDetailView {get;set;}
-        public DataGridView orderSummeryGrid { get;set;}    
+        public DataGridView orderSummeryGrid { get;set;}  
+        public DataGridView periodicOrderGrid { get;set;}   
         public string status { get;set;}    
+        public string fromDate { get;set;}  
+
+        public string toDate { get;set;}    
+       
+
+
+
 
         public void carOrderDetailGrid()
         {
@@ -35,8 +43,19 @@ namespace abc_car_traders.AppClass
 
         public void partsOrderSummeryGrid()
         {
-            string sql = "SELECT users_table.userId, users_table.firstName,  users_table.lastName, COUNT(parts_order.orderId) AS number Of Orders,  SUM(parts_order.totalAmount) AS total Amount FROM users_table INNER JOIN parts_order ON users_table.userId = parts_order.customerId\r\n WHERE parts_order.status = 'Pending'\r\nGROUP BY users_table.userId, users_table.firstName, users_table.lastName;\r\n";
+            string sql = "SELECT users_table.userId, users_table.firstName,  users_table.lastName, COUNT(parts_order.orderId) AS number Of Orders,  SUM(parts_order.totalAmount) AS total Amount FROM users_table INNER JOIN parts_order ON users_table.userId = parts_order.customerId\r\n WHERE parts_order.status = 'Pending'\r\nGROUP BY users_table.userId, users_table.firstName, users_table.lastName;";
             loadDataFromDatabaseInGridView(sql, orderSummeryGrid);
+        }
+
+        public void periodicPartsOrderSummery()
+        {
+            string sql = "SELECT users_table.userId, users_table.firstName, users_table.lastName, parts_order.orderId, parts_order.status, parts_order.date, SUM(parts_order.totalAmount) AS Amount FROM users_table INNER JOIN parts_order ON users_table.userId = parts_order.customerId WHERE parts_order.date BETWEEN '"+ fromDate + "'  AND  '"+ toDate + "' GROUP BY users_table.userId, users_table.firstName, users_table.lastName, parts_order.orderId, parts_order.status, parts_order.date";
+            loadDataFromDatabaseInGridView(sql, periodicOrderGrid);
+        }
+        public void periodicCarOrderSummery()
+        {
+            string sql = "SELECT users_table.userId, users_table.firstName, users_table.lastName, car_orders.orderId, car_orders.status, SUM(car_orders.totalAmount) AS Amount FROM users_table INNER JOIN car_orders ON users_table.userId = car_orders.customerId WHERE car_orders.date BETWEEN '"+ fromDate + "' AND '"+ toDate + "'  GROUP BY users_table.userId, users_table.firstName, users_table.lastName, car_orders.orderId, car_orders.status;";
+            loadDataFromDatabaseInGridView(sql, periodicOrderGrid);
         }
     }
 }

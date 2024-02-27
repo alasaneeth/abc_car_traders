@@ -32,9 +32,10 @@
             this.customerReportdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listOfCuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerOrderByItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportLoadArea = new System.Windows.Forms.Panel();
             this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderByStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportLoadArea = new System.Windows.Forms.Panel();
+            this.periodicOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,18 +73,11 @@
             this.customerOrderByItemsToolStripMenuItem.Text = "Customer Summery";
             this.customerOrderByItemsToolStripMenuItem.Click += new System.EventHandler(this.customerOrderByItemsToolStripMenuItem_Click);
             // 
-            // reportLoadArea
-            // 
-            this.reportLoadArea.Dock = System.Windows.Forms.DockStyle.Top;
-            this.reportLoadArea.Location = new System.Drawing.Point(0, 24);
-            this.reportLoadArea.Name = "reportLoadArea";
-            this.reportLoadArea.Size = new System.Drawing.Size(800, 400);
-            this.reportLoadArea.TabIndex = 1;
-            // 
             // ordersToolStripMenuItem
             // 
             this.ordersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.orderByStatusToolStripMenuItem});
+            this.orderByStatusToolStripMenuItem,
+            this.periodicOrderToolStripMenuItem});
             this.ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
             this.ordersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.ordersToolStripMenuItem.Text = "Orders";
@@ -94,6 +88,21 @@
             this.orderByStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.orderByStatusToolStripMenuItem.Text = "Order By Status";
             this.orderByStatusToolStripMenuItem.Click += new System.EventHandler(this.orderByStatusToolStripMenuItem_Click);
+            // 
+            // reportLoadArea
+            // 
+            this.reportLoadArea.Dock = System.Windows.Forms.DockStyle.Top;
+            this.reportLoadArea.Location = new System.Drawing.Point(0, 24);
+            this.reportLoadArea.Name = "reportLoadArea";
+            this.reportLoadArea.Size = new System.Drawing.Size(800, 400);
+            this.reportLoadArea.TabIndex = 1;
+            // 
+            // periodicOrderToolStripMenuItem
+            // 
+            this.periodicOrderToolStripMenuItem.Name = "periodicOrderToolStripMenuItem";
+            this.periodicOrderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.periodicOrderToolStripMenuItem.Text = "Periodic Order";
+            this.periodicOrderToolStripMenuItem.Click += new System.EventHandler(this.periodicOrderToolStripMenuItem_Click);
             // 
             // ReportForm
             // 
@@ -122,5 +131,6 @@
         private System.Windows.Forms.Panel reportLoadArea;
         private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderByStatusToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem periodicOrderToolStripMenuItem;
     }
 }
