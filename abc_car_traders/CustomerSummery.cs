@@ -21,13 +21,7 @@ namespace abc_car_traders
             customer.loadCustomerUnCombo();
         }
 
-        private void customerCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (customerCombo.SelectedValue != null && int.TryParse(customerCombo.SelectedValue.ToString(), out int selectedUserId))
-            {
-                customer.userId = selectedUserId;
-            }
-        }
+    
 
         private void item_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -41,17 +35,27 @@ namespace abc_car_traders
 
         private void findBtn_Click(object sender, EventArgs e)
         {
-            customer.customerGridView = customerListGridView;
+            {
+                customer.customerGridView = customerListGridView;
 
-            if(itemCoboBox.Text == "Car")
-            {
-                customer.orderSummeryByCar();
-            } else if(itemCoboBox.Text == "Car Parts")
-            {
-                customer.customerSummeryByParts();
+                if (itemCoboBox.Text == "Car")
+                {
+                    customer.orderSummeryByCar();
+                }
+                else if (itemCoboBox.Text == "Car Parts")
+                {
+                    customer.customerSummeryByParts();
+                }
             }
-   
+
         }
 
+        private void customerCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (customerCombo.SelectedValue != null && int.TryParse(customerCombo.SelectedValue.ToString(), out int selectedUserId))
+            {
+                customer.userId = selectedUserId;
+            }
+        }
     }
 }

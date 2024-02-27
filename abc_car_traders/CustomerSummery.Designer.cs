@@ -103,6 +103,7 @@
             this.findBtn.TabIndex = 10;
             this.findBtn.Text = "Find";
             this.findBtn.UseVisualStyleBackColor = true;
+            this.findBtn.Click += new System.EventHandler(this.findBtn_Click);
             // 
             // customerCombo
             // 
@@ -114,6 +115,7 @@
             this.customerCombo.Name = "customerCombo";
             this.customerCombo.Size = new System.Drawing.Size(192, 26);
             this.customerCombo.TabIndex = 9;
+            this.customerCombo.SelectedIndexChanged += new System.EventHandler(this.customerCombo_SelectedIndexChanged);
             // 
             // itemCoboBox
             // 
