@@ -60,8 +60,10 @@
     <Compile Include="AppClass\CarPartsOrderDetailForAdmin.cs" />
     <Compile Include="AppClass\CarPartsOrderDetails.cs" />
     <Compile Include="AppClass\CatParts.cs" />
+    <Compile Include="AppClass\CustomerReports.cs" />
     <Compile Include="AppClass\Dashboard.cs" />
     <Compile Include="AppClass\MyComClass.cs" />
+    <Compile Include="AppClass\OrderReport.cs" />
     <Compile Include="AppClass\PartsOrder.cs" />
     <Compile Include="CarForm.cs">
       <SubType>Form</SubType>
@@ -107,11 +109,23 @@
     </Compile>
     <Compile Include="AuthClass\User.cs" />
     <Compile Include="AuthClass\UserRegitration.cs" />
+    <Compile Include="CustomerSummery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerSummery.Designer.cs">
+      <DependentUpon>CustomerSummery.cs</DependentUpon>
+    </Compile>
     <Compile Include="DashboardForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DashboardForm.Designer.cs">
       <DependentUpon>DashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListOfCustomerReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListOfCustomerReport.Designer.cs">
+      <DependentUpon>ListOfCustomerReport.cs</DependentUpon>
     </Compile>
     <Compile Include="LogInForm.cs">
       <SubType>Form</SubType>
@@ -120,6 +134,12 @@
       <DependentUpon>LogInForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DatabaseClass\DbClass.cs" />
+    <Compile Include="OrderByStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderByStatus.Designer.cs">
+      <DependentUpon>OrderByStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="Parts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,12 +164,24 @@
     <Compile Include="PaymentForm.Designer.cs">
       <DependentUpon>PaymentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PeriodicOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PeriodicOrder.Designer.cs">
+      <DependentUpon>PeriodicOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
     <Compile Include="signUpForm.cs">
       <SubType>Form</SubType>
@@ -182,11 +214,20 @@
     <EmbeddedResource Include="CustomerMenu.resx">
       <DependentUpon>CustomerMenu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CustomerSummery.resx">
+      <DependentUpon>CustomerSummery.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ListOfCustomerReport.resx">
+      <DependentUpon>ListOfCustomerReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogInForm.resx">
       <DependentUpon>LogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderByStatus.resx">
+      <DependentUpon>OrderByStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Parts.resx">
       <DependentUpon>Parts.cs</DependentUpon>
@@ -204,6 +245,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="signUpForm.resx">
       <DependentUpon>signUpForm.cs</DependentUpon>

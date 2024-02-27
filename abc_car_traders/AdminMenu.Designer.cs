@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.reportsBtn = new System.Windows.Forms.Button();
             this.partsOrderBtn = new System.Windows.Forms.Button();
             this.carOrderDetailBtn = new System.Windows.Forms.Button();
             this.partsBtn = new System.Windows.Forms.Button();
@@ -47,7 +47,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.reportsBtn);
             this.panel1.Controls.Add(this.partsOrderBtn);
             this.panel1.Controls.Add(this.carOrderDetailBtn);
             this.panel1.Controls.Add(this.partsBtn);
@@ -61,17 +61,18 @@
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 0;
             // 
-            // button6
+            // reportsBtn
             // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(0, 324);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(200, 45);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "   REPOTS";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
+            this.reportsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.reportsBtn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportsBtn.Location = new System.Drawing.Point(0, 324);
+            this.reportsBtn.Name = "reportsBtn";
+            this.reportsBtn.Size = new System.Drawing.Size(200, 45);
+            this.reportsBtn.TabIndex = 8;
+            this.reportsBtn.Text = "   REPOTS";
+            this.reportsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reportsBtn.UseVisualStyleBackColor = true;
+            this.reportsBtn.Click += new System.EventHandler(this.reportsBtn_Click);
             // 
             // partsOrderBtn
             // 
@@ -221,7 +222,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel formloadArea;
         private System.Windows.Forms.Button dashBoardBtn;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button reportsBtn;
         private System.Windows.Forms.Button partsOrderBtn;
         private System.Windows.Forms.Button carOrderDetailBtn;
         private System.Windows.Forms.Button partsBtn;

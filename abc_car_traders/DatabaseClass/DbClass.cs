@@ -206,6 +206,19 @@ namespace abc_car_traders.MyComClass
 
         }
 
+        public void loadCombobox(string sql, ComboBox comboBox, string displayMember,string valueMember)
+        {
+            SqlDataAdapter da = new SqlDataAdapter(sql,con);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            comboBox.DataSource = dt;
+            comboBox.DisplayMember = displayMember;
+            comboBox.ValueMember = valueMember;
+            comboBox.SelectedIndex = -1;
+
+        }
+       
+
     }
 
 
