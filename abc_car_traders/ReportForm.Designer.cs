@@ -34,8 +34,11 @@
             this.customerOrderByItemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderByStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportLoadArea = new System.Windows.Forms.Panel();
             this.periodicOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportLoadArea = new System.Windows.Forms.Panel();
+            this.stockInHandeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.carStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.partsStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +46,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.customerReportdToolStripMenuItem,
-            this.ordersToolStripMenuItem});
+            this.ordersToolStripMenuItem,
+            this.stockInHandeReportToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -89,6 +93,13 @@
             this.orderByStatusToolStripMenuItem.Text = "Order By Status";
             this.orderByStatusToolStripMenuItem.Click += new System.EventHandler(this.orderByStatusToolStripMenuItem_Click);
             // 
+            // periodicOrderToolStripMenuItem
+            // 
+            this.periodicOrderToolStripMenuItem.Name = "periodicOrderToolStripMenuItem";
+            this.periodicOrderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.periodicOrderToolStripMenuItem.Text = "Periodic Order";
+            this.periodicOrderToolStripMenuItem.Click += new System.EventHandler(this.periodicOrderToolStripMenuItem_Click);
+            // 
             // reportLoadArea
             // 
             this.reportLoadArea.Dock = System.Windows.Forms.DockStyle.Top;
@@ -97,12 +108,27 @@
             this.reportLoadArea.Size = new System.Drawing.Size(800, 400);
             this.reportLoadArea.TabIndex = 1;
             // 
-            // periodicOrderToolStripMenuItem
+            // stockInHandeReportToolStripMenuItem
             // 
-            this.periodicOrderToolStripMenuItem.Name = "periodicOrderToolStripMenuItem";
-            this.periodicOrderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.periodicOrderToolStripMenuItem.Text = "Periodic Order";
-            this.periodicOrderToolStripMenuItem.Click += new System.EventHandler(this.periodicOrderToolStripMenuItem_Click);
+            this.stockInHandeReportToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.carStockToolStripMenuItem,
+            this.partsStockToolStripMenuItem});
+            this.stockInHandeReportToolStripMenuItem.Name = "stockInHandeReportToolStripMenuItem";
+            this.stockInHandeReportToolStripMenuItem.Size = new System.Drawing.Size(137, 20);
+            this.stockInHandeReportToolStripMenuItem.Text = "Stock In Hande Report";
+            // 
+            // carStockToolStripMenuItem
+            // 
+            this.carStockToolStripMenuItem.Name = "carStockToolStripMenuItem";
+            this.carStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.carStockToolStripMenuItem.Text = "Car Stock";
+            this.carStockToolStripMenuItem.Click += new System.EventHandler(this.carStockToolStripMenuItem_Click);
+            // 
+            // partsStockToolStripMenuItem
+            // 
+            this.partsStockToolStripMenuItem.Name = "partsStockToolStripMenuItem";
+            this.partsStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.partsStockToolStripMenuItem.Text = "Parts Stock";
             // 
             // ReportForm
             // 
@@ -132,5 +158,8 @@
         private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem orderByStatusToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem periodicOrderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockInHandeReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem carStockToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem partsStockToolStripMenuItem;
     }
 }

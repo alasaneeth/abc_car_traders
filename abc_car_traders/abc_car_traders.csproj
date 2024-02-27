@@ -65,6 +65,7 @@
     <Compile Include="AppClass\MyComClass.cs" />
     <Compile Include="AppClass\OrderReport.cs" />
     <Compile Include="AppClass\PartsOrder.cs" />
+    <Compile Include="AppClass\StockInHandReport.cs" />
     <Compile Include="CarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +95,12 @@
     </Compile>
     <Compile Include="CarPrtsOrderDetaiFormForAdmin.Designer.cs">
       <DependentUpon>CarPrtsOrderDetaiFormForAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CarStockInHandReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarStockInHandReport.Designer.cs">
+      <DependentUpon>CarStockInHandReport.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomerDetailsForm.cs">
       <SubType>Form</SubType>
@@ -207,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CarPrtsOrderDetaiFormForAdmin.resx">
       <DependentUpon>CarPrtsOrderDetaiFormForAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarStockInHandReport.resx">
+      <DependentUpon>CarStockInHandReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerDetailsForm.resx">
       <DependentUpon>CustomerDetailsForm.cs</DependentUpon>
