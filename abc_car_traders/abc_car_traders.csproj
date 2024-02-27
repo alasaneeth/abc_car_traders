@@ -90,6 +90,12 @@
     <Compile Include="CarOrderForm.Designer.cs">
       <DependentUpon>CarOrderForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CarPartsStockInhand.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarPartsStockInhand.Designer.cs">
+      <DependentUpon>CarPartsStockInhand.cs</DependentUpon>
+    </Compile>
     <Compile Include="CarPrtsOrderDetaiFormForAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CarOrderForm.resx">
       <DependentUpon>CarOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CarPartsStockInhand.resx">
+      <DependentUpon>CarPartsStockInhand.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CarPrtsOrderDetaiFormForAdmin.resx">
       <DependentUpon>CarPrtsOrderDetaiFormForAdmin.cs</DependentUpon>

@@ -35,10 +35,10 @@
             this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderByStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.periodicOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportLoadArea = new System.Windows.Forms.Panel();
             this.stockInHandeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.carStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.partsStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportLoadArea = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,24 +89,16 @@
             // orderByStatusToolStripMenuItem
             // 
             this.orderByStatusToolStripMenuItem.Name = "orderByStatusToolStripMenuItem";
-            this.orderByStatusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.orderByStatusToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.orderByStatusToolStripMenuItem.Text = "Order By Status";
             this.orderByStatusToolStripMenuItem.Click += new System.EventHandler(this.orderByStatusToolStripMenuItem_Click);
             // 
             // periodicOrderToolStripMenuItem
             // 
             this.periodicOrderToolStripMenuItem.Name = "periodicOrderToolStripMenuItem";
-            this.periodicOrderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.periodicOrderToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.periodicOrderToolStripMenuItem.Text = "Periodic Order";
             this.periodicOrderToolStripMenuItem.Click += new System.EventHandler(this.periodicOrderToolStripMenuItem_Click);
-            // 
-            // reportLoadArea
-            // 
-            this.reportLoadArea.Dock = System.Windows.Forms.DockStyle.Top;
-            this.reportLoadArea.Location = new System.Drawing.Point(0, 24);
-            this.reportLoadArea.Name = "reportLoadArea";
-            this.reportLoadArea.Size = new System.Drawing.Size(800, 400);
-            this.reportLoadArea.TabIndex = 1;
             // 
             // stockInHandeReportToolStripMenuItem
             // 
@@ -129,6 +121,15 @@
             this.partsStockToolStripMenuItem.Name = "partsStockToolStripMenuItem";
             this.partsStockToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.partsStockToolStripMenuItem.Text = "Parts Stock";
+            this.partsStockToolStripMenuItem.Click += new System.EventHandler(this.partsStockToolStripMenuItem_Click);
+            // 
+            // reportLoadArea
+            // 
+            this.reportLoadArea.Dock = System.Windows.Forms.DockStyle.Top;
+            this.reportLoadArea.Location = new System.Drawing.Point(0, 24);
+            this.reportLoadArea.Name = "reportLoadArea";
+            this.reportLoadArea.Size = new System.Drawing.Size(800, 400);
+            this.reportLoadArea.TabIndex = 1;
             // 
             // ReportForm
             // 

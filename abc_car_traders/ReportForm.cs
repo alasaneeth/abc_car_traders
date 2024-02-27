@@ -51,5 +51,10 @@ namespace abc_car_traders
             com.formLoadInPanel(new CarStockInHandReport(), reportLoadArea);
 
         }
+
+        private void partsStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            com.formLoadInPanel(new CarPartsStockInhand(), reportLoadArea);
+        }
     }
 }
