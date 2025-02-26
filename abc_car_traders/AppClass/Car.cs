@@ -1,4 +1,4 @@
-﻿using abc_car_traders.MyComClass;
+using abc_car_traders.MyComClass;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,50 +10,58 @@ using System.Windows.Forms.VisualStyles;
 
 namespace abc_car_traders.AppClass
 {
-    internal class Car:DbClass
+    internal class Car : DbClass
     {
+      
         public int Id { get; set; }
-        public string model { get; set; }
-        public string fuelType { get; set; }
-        public int year { get; set; }
-        public decimal price { get; set; }
-        public int qty { get; set; }
-        public DataGridView myGridView { get; set; }
 
-        public void save()
+        public string Model { get; set; }
+
+        public string FuelType { get; set; }
+
+        public int Year { get; set; }
+
+        public decimal Price { get; set; }
+
+        public int Quantity { get; set; }
+
+        public DataGridView MyGridView { get; set; }
+
+        /// Saves a new car record to the database.
+        public void Save()
         {
-            string sql = "INSERT INTO cars (model,fuelType, year, Price, AvailableQuantity) VALUES  ( '" + model + "','" + fuelType + "'," + year + ", " + price + ", " + qty + ")";
-            if (executeQuery(sql, functionType.insert)) 
+            string sql = "INSERT INTO cars (model, fuelType, year, Price, AvailableQuantity) VALUES  ('" + Model + "','" + FuelType + "'," + Year + ", " + Price + ", " + Quantity + ")";
+            if (ExecuteQuery(sql, FunctionType.Insert))
             {
-                view();
-            };
+                View();
+            }
         }
 
-        public void view()
+        /// Retrieves and displays all car records from the database.
+        public void View()
         {
-            string sql = "select * from Cars;";
-            loadDataFromDatabaseInGridView(sql, myGridView);
+            string sql = "SELECT * FROM Cars;";
+            LoadDataFromDatabaseInGridView(sql, MyGridView);
         }
 
+        /// Updates an existing car record in the database.
         public void Update()
         {
-            string sql = "UPDATE cars SET model = '" + model + "', fuelType = '" + fuelType + "', year = " + year + ", Price = " + price + ", AvailableQuantity = " + qty + " WHERE id = '"+ Id + "'";
-            if (executeQuery(sql, functionType.update))
+            string sql = "UPDATE cars SET model = '" + Model + "', fuelType = '" + FuelType + "', year = " + Year + ", Price = " + Price + ", AvailableQuantity = " + Quantity + " WHERE id = '" + Id + "'";
+            if (ExecuteQuery(sql, FunctionType.Update))
             {
-                view();
+                View();
             }
         }
 
-        public void delete()
+        /// Deletes a car record from the database.
+        public void Delete()
         {
-            string sql = "Delete from cars where id =" + Id;
-            if (executeQuery(sql, functionType.delete))
+            string sql = "DELETE FROM cars WHERE id =" + Id;
+            if (ExecuteQuery(sql, FunctionType.Delete))
             {
-                view();
+                View();
             }
-
         }
-       
-
     }
 }
